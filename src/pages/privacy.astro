@@ -1,18 +1,10 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Privacy Policy: Faster</title>
-<meta name="description" content="Faster collects no personal data. No account, no analytics, no tracking. Your fasts stay on your iPhone.">
-<link rel="canonical" href="https://robinbaral.github.io/faster/privacy/">
-<link rel="icon" href="../images/icon.png" media="(prefers-color-scheme: light)">
-<link rel="icon" href="../images/icon-dark.png" media="(prefers-color-scheme: dark)">
-<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
-<meta name="color-scheme" content="light dark">
-<script type="application/ld+json">
-{
+---
+import Base from '../layouts/Base.astro';
+import Brand from '../components/Brand.astro';
+import Footer from '../components/Footer.astro';
+
+const base = import.meta.env.BASE_URL;
+const ld = `{
   "@context": "https://schema.org",
   "@graph": [
     {
@@ -33,18 +25,17 @@
       ]
     }
   ]
-}
-</script>
-<link rel="stylesheet" href="../style.css">
-</head>
-<body>
+}`;
+---
+<Base title="Privacy Policy: Faster" description="Faster collects no personal data. No account, no analytics, no tracking. Your fasts stay on your iPhone.">
+<script slot="head" type="application/ld+json" set:html={JSON.stringify(JSON.parse(ld))} />
 
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="../"><picture><source srcset="../images/icon-dark.png" media="(prefers-color-scheme: dark)"><img src="../images/icon.png" alt="" width="32" height="32"></picture>Faster</a>
+    <Brand />
     <nav>
-      <a href="../#features">Features</a>
-      <a href="../#faq">FAQ</a>
+      <a href={`${base}#features`}>Features</a>
+      <a href={`${base}#faq`}>FAQ</a>
     </nav>
   </div>
 </header>
@@ -94,20 +85,5 @@
   <p>Questions about this policy or about Faster? Write to me at <a href="mailto:fasterfastingapp@proton.me">fasterfastingapp@proton.me</a>.</p>
 </main>
 
-<footer>
-  <div class="wrap">
-    <a class="brand" href="../"><picture><source srcset="../images/icon-dark.png" media="(prefers-color-scheme: dark)"><img src="../images/icon.png" alt="" width="32" height="32"></picture>Faster</a>
-    <p class="tagline">A simple, private intermittent fasting timer for iPhone.</p>
-    <div class="row">
-      <div class="left">
-        <span>© 2026 Faster</span>
-        <a href="mailto:fasterfastingapp@proton.me">Support</a>
-        <a href="../">Home</a>
-      </div>
-      <span class="credit">Site by <a href="https://rcostudio.nz/">R&amp;Co.</a></span>
-    </div>
-  </div>
-</footer>
-
-</body>
-</html>
+<Footer />
+</Base>

@@ -1,0 +1,46 @@
+---
+// A responsive picture: AVIF and WebP at a few widths, with an optional dark-mode variant.
+import { getImage } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+  src: ImageMetadata;
+  dark?: ImageMetadata;
+  widths: number[];
+  sizes: string;
+  alt?: string;
+  class?: string;
+  loading?: 'lazy' | 'eager';
+  fetchpriority?: 'high' | 'low' | 'auto';
+}
+
+const { src, dark, widths, sizes, alt = '', class: className, loading, fetchpriority } = Astro.props;
+// Never upscale past the source.
+const fit = (image: ImageMetadata) => widths.filter((w) => w <= image.width).concat(widths.some((w) => w > image.width) ? [image.width] : []);
+const sources = async (image: ImageMetadata) => {
+  const w = fit(image);
+  const [avif, webp] = await Promise.all(
+    (['avif', 'webp'] as const).map((format) => getImage({ src: image, widths: w, width: Math.max(...w), format })),
+  );
+  return { avif, webp };
+};
+const light = await sources(src);
+const night = dark && (await sources(dark));
+---
+<picture>
+  {night && <source media="(prefers-color-scheme: dark)" type="image/avif" srcset={night.avif.srcSet.attribute} sizes={sizes} />}
+  {night && <source media="(prefers-color-scheme: dark)" type="image/webp" srcset={night.webp.srcSet.attribute} sizes={sizes} />}
+  <source type="image/avif" srcset={light.avif.srcSet.attribute} sizes={sizes} />
+  <img
+    class={className}
+    src={light.webp.src}
+    srcset={light.webp.srcSet.attribute}
+    sizes={sizes}
+    width={src.width}
+    height={src.height}
+    alt={alt}
+    loading={loading}
+    decoding="async"
+    fetchpriority={fetchpriority}
+  />
+</picture>

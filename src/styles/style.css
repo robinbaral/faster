@@ -72,10 +72,13 @@ p { margin: 0; }
 /* The radius set directly, not inherited: the app icon's img sits inside a <picture>. */
 .hero h1 .tile img { width: 100%; height: 100%; border-radius: 22%; }
 /* A playful tilt on hover, alternating direction, with a little overshoot. */
-.hero h1 .tile { transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1); }
+/* `translate` carries the hovered tile's pull toward the cursor (set by script), so it composes with the tilt. */
+.hero h1 .tile {
+  transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1), translate 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
-  .hero h1 .tile:hover { transform: rotate(-10deg) scale(1.08); }
-  .hero h1 .tile:nth-of-type(2):hover { transform: rotate(10deg) scale(1.08); }
+  .hero h1 .tile:hover { transform: rotate(-6deg) scale(1.06); }
+  .hero h1 .tile:nth-of-type(2):hover { transform: rotate(6deg) scale(1.06); }
 }
 .hero .lede { font-size: clamp(19px, 1.8vw, 23px); color: var(--muted); margin: 28px auto 34px; max-width: 34ch; }
 .hero .cta { display: flex; align-items: center; justify-content: center; gap: 18px; flex-wrap: wrap; }
@@ -91,12 +94,12 @@ p { margin: 0; }
 .phone { filter: drop-shadow(0 30px 40px rgba(0, 0, 0, 0.16)); }
 .feature-media > .phone, .feature-media > picture > .phone { width: min(300px, 70vw); }
 .pair, .trio { display: flex; align-items: flex-end; }
-.pair > .phone { width: min(250px, 42vw); }
-.pair > .phone + .phone { margin-left: -50px; transform: translateY(-40px); }
-.pair .lock { position: relative; z-index: 1; }
+.pair .phone { width: min(250px, 42vw); }
+.pair .lock { margin-left: -50px; transform: translateY(-40px); position: relative; z-index: 1; }
 .pair .lock .lock-widget { position: absolute; top: 63%; left: -14%; width: 128%; max-width: none; }
 .trio .phone { width: min(210px, 30vw); }
-.trio .phone:nth-child(2) { margin: 0 -48px; transform: translateY(-46px); z-index: 1; position: relative; }
+/* Each image sits in a <picture>, so the middle one is found through it. */
+.trio > :nth-child(2) > .phone { margin: 0 -48px; transform: translateY(-46px); z-index: 1; position: relative; }
 .chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
 .chip { background: var(--surface); border-radius: 999px; padding: 8px 15px; font-size: 15px; font-weight: 600; }
 .chip b { font-variant-numeric: tabular-nums; margin-right: 6px; }

@@ -1,33 +1,36 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Faster: Intermittent Fasting Timer for iPhone</title>
-<meta name="description" content="Faster is a simple, private intermittent fasting timer for iPhone. Follow your fast through digesting, fat burning and ketosis, with widgets, insights and no account. Supports 16:8, 18:6, 20:4 and OMAD.">
-<link rel="canonical" href="https://robinbaral.github.io/faster/">
-<link rel="icon" href="images/icon.png" media="(prefers-color-scheme: light)">
-<link rel="icon" href="images/icon-dark.png" media="(prefers-color-scheme: dark)">
-<link rel="apple-touch-icon" href="images/icon.png">
-<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
-<meta name="color-scheme" content="light dark">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Faster">
-<meta property="og:title" content="Faster: Intermittent Fasting Timer for iPhone">
-<meta property="og:description" content="Follow your fast phase by phase, from digesting to fat burning and ketosis. Simple, private, no account.">
-<meta property="og:image" content="https://robinbaral.github.io/faster/images/og.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:url" content="https://robinbaral.github.io/faster/">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Faster: Intermittent Fasting Timer for iPhone">
-<meta name="twitter:description" content="Follow your fast phase by phase, from digesting to fat burning and ketosis. Simple, private, no account.">
-<meta name="twitter:image" content="https://robinbaral.github.io/faster/images/og.png">
-<meta name="apple-itunes-app" content="app-id=6829356882">
-<link rel="stylesheet" href="style.css">
-<script type="application/ld+json">
-{
+---
+import Base from '../layouts/Base.astro';
+import Brand from '../components/Brand.astro';
+import Footer from '../components/Footer.astro';
+import Shot from '../components/Shot.astro';
+import StoreBadge from '../components/StoreBadge.astro';
+import icon from '../assets/icon.png';
+import iconDark from '../assets/icon-dark.png';
+import tileGauge from '../assets/tile-gauge.png';
+import tileBar from '../assets/tile-bar.png';
+import timer from '../assets/timer.png';
+import timerDark from '../assets/timer-dark.png';
+import history from '../assets/history.png';
+import historyDark from '../assets/history-dark.png';
+import phase from '../assets/phase.png';
+import phaseDark from '../assets/phase-dark.png';
+import stats from '../assets/stats.png';
+import statsDark from '../assets/stats-dark.png';
+import night from '../assets/night.png';
+import fullphase from '../assets/fullphase.png';
+import pop from '../assets/pop.png';
+import home from '../assets/home.png';
+import lock from '../assets/lock.png';
+import lockWidget from '../assets/lock-widget.png';
+
+const title = 'Faster: Intermittent Fasting Timer for iPhone';
+const description = 'Faster is a simple, private intermittent fasting timer for iPhone. Follow your fast through digesting, fat burning and ketosis, with widgets, insights and no account. Supports 16:8, 18:6, 20:4 and OMAD.';
+const social = 'Follow your fast phase by phase, from digesting to fat burning and ketosis. Simple, private, no account.';
+const base = import.meta.env.BASE_URL;
+const absolute = (path: string) => new URL(path, Astro.site).href;
+const og = absolute(`${base}images/og.png`);
+
+const ld = JSON.parse(`{
   "@context": "https://schema.org",
   "@graph": [
     {
@@ -88,22 +91,43 @@
       ]
     }
   ]
-}
-</script>
-</head>
-<body>
+}`);
+// The app's icon and screenshots point at the files the build emits.
+const app = ld['@graph'].find((node: { '@type': string }) => node['@type'] === 'MobileApplication');
+app.image = absolute(icon.src);
+app.screenshot = [timer, phase, stats, history].map((image) => absolute(image.src));
+
+// Each `sizes` mirrors the width the stylesheet gives that image.
+const phoneSizes = 'min(330px, 74vw)';
+const tileSizes = 'clamp(39px, 7.06vw, 95px)';
+---
+<Base title={title} description={description}>
+<Fragment slot="head">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Faster">
+<meta property="og:title" content={title}>
+<meta property="og:description" content={social}>
+<meta property="og:image" content={og}>
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content={absolute(base)}>
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content={title}>
+<meta name="twitter:description" content={social}>
+<meta name="twitter:image" content={og}>
+<meta name="apple-itunes-app" content="app-id=6829356882">
+<script type="application/ld+json" set:html={JSON.stringify(ld)} />
+</Fragment>
 
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="./"><picture><source srcset="images/icon-dark.png" media="(prefers-color-scheme: dark)"><img src="images/icon.png" alt="" width="32" height="32"></picture>Faster</a>
+    <Brand />
     <nav>
       <a href="#features">Features</a>
       <a href="#privacy">Privacy</a>
       <a href="#faq">FAQ</a>
     </nav>
-    <a class="store small" href="https://apps.apple.com/app/id6829356882" aria-label="Download Faster on the App Store">
-      <span class="badge-art"><img class="bg" src="images/badge/badge-bg.svg" alt=""><img class="rim" src="images/badge/badge-vector.svg" alt=""><img class="logo" src="images/badge/badge-apple-logo.svg" alt=""><img class="word" src="images/badge/badge-store-word.svg" alt=""><img class="small-text" src="images/badge/badge-download-text.svg" alt=""></span>
-    </a>
+    <StoreBadge small />
   </div>
 </header>
 
@@ -111,23 +135,16 @@
   <section class="hero">
     <div class="wrap">
       <h1>
-        Your
-        <span class="tile"><picture><source srcset="images/icon-dark.png" media="(prefers-color-scheme: dark)"><img src="images/icon.png" alt="" width="256" height="256"></picture></span>
-        fast,<br>
-        phase <span class="tile"><img src="images/tile-gauge.png" alt="" width="244" height="244"></span> by<br>
-        phase <span class="tile"><img src="images/tile-bar.png" alt="" width="244" height="244"></span>
+        Your <span class="tile"><Shot src={icon} dark={iconDark} widths={[96, 192]} sizes={tileSizes} loading="eager" /></span> fast,<br>
+        phase <span class="tile"><Shot src={tileGauge} widths={[96, 192]} sizes={tileSizes} loading="eager" /></span> by<br>
+        phase <span class="tile"><Shot src={tileBar} widths={[96, 192]} sizes={tileSizes} loading="eager" /></span>
       </h1>
       <p class="lede">A simple, private intermittent fasting timer that shows what your body is doing, from digesting to fat burning and ketosis.</p>
       <div class="cta">
-        <a class="store" href="https://apps.apple.com/app/id6829356882" aria-label="Download Faster on the App Store">
-          <span class="badge-art"><img class="bg" src="images/badge/badge-bg.svg" alt=""><img class="rim" src="images/badge/badge-vector.svg" alt=""><img class="logo" src="images/badge/badge-apple-logo.svg" alt=""><img class="word" src="images/badge/badge-store-word.svg" alt=""><img class="small-text" src="images/badge/badge-download-text.svg" alt=""></span>
-        </a>
+        <StoreBadge />
         <span class="note">Free · No account · No ads</span>
       </div>
-      <picture>
-        <source srcset="images/timer-dark.png" media="(prefers-color-scheme: dark)">
-        <img class="hero-phone phone" src="images/timer.png" width="620" height="1300" alt="Faster on iPhone: a fast at 14 hours in the fat burning phase, with 1 hour 53 minutes to its 16-hour goal.">
-      </picture>
+      <Shot class="hero-phone phone" src={timer} dark={timerDark} widths={[330, 620]} sizes={phoneSizes} loading="eager" fetchpriority="high" alt="Faster on iPhone: a fast at 14 hours in the fat burning phase, with 1 hour 53 minutes to its 16-hour goal." />
     </div>
   </section>
 
@@ -146,7 +163,7 @@
           <span class="chip">Custom, up to 72h</span>
         </div>
       </div>
-      <div class="feature-media"><picture><source srcset="images/history-dark.png" media="(prefers-color-scheme: dark)"><img class="phone" src="images/history.png" width="620" height="1300" alt="Faster's history: a list of fasts with their times, durations and whether each reached its goal." loading="lazy"></picture></div>
+      <div class="feature-media"><Shot class="phone" src={history} dark={historyDark} widths={[300, 620]} sizes={phoneSizes} loading="lazy" alt="Faster's history: a list of fasts with their times, durations and whether each reached its goal." /></div>
     </section>
 
     <section class="feature flip">
@@ -154,7 +171,7 @@
         <h2>See what's going on inside.</h2>
         <p>Your fast moves through five phases: digesting, settling, fat burning, ketosis and deep fast. Tap any of them to read what your body is doing right now.</p>
       </div>
-      <div class="feature-media"><picture><source srcset="images/phase-dark.png" media="(prefers-color-scheme: dark)"><img class="phone" src="images/phase.png" width="620" height="1300" alt="Faster's phase sheet for Settling: blood sugar levels out and insulin drops, with time remaining in the phase." loading="lazy"></picture></div>
+      <div class="feature-media"><Shot class="phone" src={phase} dark={phaseDark} widths={[300, 620]} sizes={phoneSizes} loading="lazy" alt="Faster's phase sheet for Settling: blood sugar levels out and insulin drops, with time remaining in the phase." /></div>
     </section>
 
     <section class="feature">
@@ -164,9 +181,9 @@
       </div>
       <div class="feature-media">
         <div class="trio">
-          <img class="phone" src="images/night.png" width="620" height="1300" alt="Faster in the Night theme: cool blue and violet on dark." loading="lazy">
-          <img class="phone" src="images/fullphase.png" width="620" height="1300" alt="Faster in the Full Phase theme: the whole screen in the current phase's colour." loading="lazy">
-          <img class="phone" src="images/pop.png" width="620" height="1300" alt="Faster in the Pop theme: flat, playful colour blocks." loading="lazy">
+          <Shot class="phone" src={night} widths={[210, 420]} sizes="min(210px, 30vw)" loading="lazy" alt="Faster in the Night theme: cool blue and violet on dark." />
+          <Shot class="phone" src={fullphase} widths={[210, 420]} sizes="min(210px, 30vw)" loading="lazy" alt="Faster in the Full Phase theme: the whole screen in the current phase's colour." />
+          <Shot class="phone" src={pop} widths={[210, 420]} sizes="min(210px, 30vw)" loading="lazy" alt="Faster in the Pop theme: flat, playful colour blocks." />
         </div>
       </div>
     </section>
@@ -178,10 +195,10 @@
       </div>
       <div class="feature-media">
         <div class="pair">
-          <img class="phone" src="images/home.png" width="620" height="1300" alt="An iPhone Home Screen with Faster's widgets in different themes." loading="lazy">
+          <Shot class="phone" src={home} widths={[250, 500]} sizes="min(250px, 42vw)" loading="lazy" alt="An iPhone Home Screen with Faster's widgets in different themes." />
           <div class="phone lock">
-            <img src="images/lock.png" width="620" height="1300" alt="" loading="lazy">
-            <img class="lock-widget" src="images/lock-widget.png" width="1240" height="433" alt="Faster's Lock Screen widgets, magnified: the fat burning phase with its timer and goal, and a ring showing 14 hours." loading="lazy">
+            <Shot src={lock} widths={[250, 500]} sizes="min(250px, 42vw)" loading="lazy" />
+            <Shot class="lock-widget" src={lockWidget} widths={[320, 640]} sizes="min(320px, 54vw)" loading="lazy" alt="Faster's Lock Screen widgets, magnified: the fat burning phase with its timer and goal, and a ring showing 14 hours." />
           </div>
         </div>
       </div>
@@ -192,7 +209,7 @@
         <h2>Your progress at a glance.</h2>
         <p>See your streak, how often you reach your goal and the trend of your fasts. Insights explain in plain words what's changing, like fasts getting longer or start times becoming more regular.</p>
       </div>
-      <div class="feature-media"><picture><source srcset="images/stats-dark.png" media="(prefers-color-scheme: dark)"><img class="phone" src="images/stats.png" width="620" height="1300" alt="Faster's stats: an insight about time spent in fat burning, the last 14 days of fasts and a trend." loading="lazy"></picture></div>
+      <div class="feature-media"><Shot class="phone" src={stats} dark={statsDark} widths={[300, 620]} sizes={phoneSizes} loading="lazy" alt="Faster's stats: an insight about time spent in fat burning, the last 14 days of fasts and a trend." /></div>
     </section>
   </div>
 
@@ -240,34 +257,34 @@
     <div class="wrap">
       <h2>Ready for your next fast?</h2>
       <p>Free on the App Store, in six languages.</p>
-      <a class="store" href="https://apps.apple.com/app/id6829356882" aria-label="Download Faster on the App Store">
-        <span class="badge-art"><img class="bg" src="images/badge/badge-bg.svg" alt=""><img class="rim" src="images/badge/badge-vector.svg" alt=""><img class="logo" src="images/badge/badge-apple-logo.svg" alt=""><img class="word" src="images/badge/badge-store-word.svg" alt=""><img class="small-text" src="images/badge/badge-download-text.svg" alt=""></span>
-      </a>
+      <StoreBadge />
     </div>
     <div class="fan" aria-hidden="true">
-      <picture><source srcset="images/stats-dark.png" media="(prefers-color-scheme: dark)"><img class="phone l2" src="images/stats.png" alt="" loading="lazy"></picture>
-      <img class="phone l1" src="images/night.png" alt="" loading="lazy">
-      <img class="phone r1" src="images/fullphase.png" alt="" loading="lazy">
-      <img class="phone r2" src="images/home.png" alt="" loading="lazy">
-      <picture><source srcset="images/timer-dark.png" media="(prefers-color-scheme: dark)"><img class="phone c" src="images/timer.png" alt="" loading="lazy"></picture>
+      <Shot class="phone l2" src={stats} dark={statsDark} widths={[190, 380]} sizes="clamp(110px, 15vw, 190px)" loading="lazy" />
+      <Shot class="phone l1" src={night} widths={[240, 480]} sizes="clamp(140px, 19vw, 240px)" loading="lazy" />
+      <Shot class="phone r1" src={fullphase} widths={[240, 480]} sizes="clamp(140px, 19vw, 240px)" loading="lazy" />
+      <Shot class="phone r2" src={home} widths={[190, 380]} sizes="clamp(110px, 15vw, 190px)" loading="lazy" />
+      <Shot class="phone c" src={timer} dark={timerDark} widths={[300, 620]} sizes="clamp(170px, 24vw, 300px)" loading="lazy" />
     </div>
   </section>
 </main>
 
-<footer>
-  <div class="wrap">
-    <a class="brand" href="./"><picture><source srcset="images/icon-dark.png" media="(prefers-color-scheme: dark)"><img src="images/icon.png" alt="" width="32" height="32"></picture>Faster</a>
-    <p class="tagline">A simple, private intermittent fasting timer for iPhone.</p>
-    <div class="row">
-      <div class="left">
-        <span>© 2026 Faster</span>
-        <a href="mailto:fasterfastingapp@proton.me">Support</a>
-        <a href="privacy/">Privacy</a>
-      </div>
-      <span class="credit">Site by <a href="https://rcostudio.nz/">R&amp;Co.</a></span>
-    </div>
-  </div>
-</footer>
+<Footer home />
 
-</body>
-</html>
+<script>
+// A hovered headline tile follows the cursor a little, and springs back to rest when it leaves.
+if (matchMedia('(hover: hover) and (prefers-reduced-motion: no-preference)').matches) {
+  const h1 = document.querySelector<HTMLElement>('.hero h1')!;
+  for (const tile of h1.querySelectorAll<HTMLElement>('.tile')) {
+    tile.addEventListener('pointermove', (e) => {
+      // Offsets ignore `translate`, so this is the tile's resting spot, not where the pull has moved it.
+      const box = h1.getBoundingClientRect(), size = tile.offsetWidth;
+      const dx = e.clientX - (box.left + tile.offsetLeft - h1.offsetLeft + size / 2);
+      const dy = e.clientY - (box.top + tile.offsetTop - h1.offsetTop + size / 2);
+      tile.style.translate = `${(dx * 0.3).toFixed(1)}px ${(dy * 0.3).toFixed(1)}px`;
+    });
+    tile.addEventListener('pointerleave', () => { tile.style.translate = ''; });
+  }
+}
+</script>
+</Base>

@@ -1,0 +1,13 @@
+---
+import bg from '../assets/badge/badge-bg.svg?url';
+import rim from '../assets/badge/badge-vector.svg?url';
+import logo from '../assets/badge/badge-apple-logo.svg?url';
+import word from '../assets/badge/badge-store-word.svg?url';
+import smallText from '../assets/badge/badge-download-text.svg?url';
+
+interface Props { small?: boolean }
+const { small } = Astro.props;
+---
+<a class:list={['store', { small }]} href="https://apps.apple.com/app/id6829356882" aria-label="Download Faster on the App Store">
+  <span class="badge-art"><img class="bg" src={bg} alt=""><img class="rim" src={rim} alt=""><img class="logo" src={logo} alt=""><img class="word" src={word} alt=""><img class="small-text" src={smallText} alt=""></span>
+</a>

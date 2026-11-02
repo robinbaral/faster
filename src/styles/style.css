@@ -72,7 +72,7 @@ p { margin: 0; }
 /* The radius set directly, not inherited: the app icon's img sits inside a <picture>. */
 .hero h1 .tile img { width: 100%; height: 100%; border-radius: 22%; }
 /* The bar tile's content runs close to its edges, so it sits inset on its own white. */
-.hero h1 .tile.inset { box-sizing: border-box; padding: 0.07em; background: #fff; }
+.hero h1 .tile.inset { box-sizing: border-box; padding: 0.035em; background: #fff; }
 .hero h1 .tile.inset img { border-radius: 0; }
 /* A playful tilt on hover, alternating direction, with a little overshoot. */
 /* `translate` carries the hovered tile's pull toward the cursor (set by script), so it composes with the tilt. */

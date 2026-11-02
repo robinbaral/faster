@@ -16,6 +16,8 @@ import phase from '../assets/phase.png';
 import phaseDark from '../assets/phase-dark.png';
 import stats from '../assets/stats.png';
 import statsDark from '../assets/stats-dark.png';
+import notifications from '../assets/notifications.png';
+import notificationsDark from '../assets/notifications-dark.png';
 import night from '../assets/night.png';
 import fullphase from '../assets/fullphase.png';
 import pop from '../assets/pop.png';
@@ -137,7 +139,7 @@ const tileSizes = 'clamp(39px, 7.06vw, 95px)';
       <h1>
         Your <span class="tile"><Shot src={icon} dark={iconDark} widths={[96, 192]} sizes={tileSizes} loading="eager" /></span> fast,<br>
         phase <span class="tile"><Shot src={tileGauge} widths={[96, 192]} sizes={tileSizes} loading="eager" /></span> by<br>
-        phase <span class="tile"><Shot src={tileBar} widths={[96, 192]} sizes={tileSizes} loading="eager" /></span>
+        phase <span class="tile inset"><Shot src={tileBar} widths={[96, 192]} sizes={tileSizes} loading="eager" /></span>
       </h1>
       <p class="lede">A simple, private intermittent fasting timer that shows what your body is doing, from digesting to fat burning and ketosis.</p>
       <div class="cta">
@@ -211,6 +213,14 @@ const tileSizes = 'clamp(39px, 7.06vw, 95px)';
       </div>
       <div class="feature-media"><Shot class="phone" src={stats} dark={statsDark} widths={[300, 620]} sizes={phoneSizes} loading="lazy" alt="Faster's stats: an insight about time spent in fat burning, the last 14 days of fasts and a trend." /></div>
     </section>
+
+    <section class="feature flip">
+      <div class="feature-text">
+        <h2>Notifications, your way.</h2>
+        <p>Let Faster stay out of your way with a single nudge at your goal, or have it cheer you on: halfway there, one hour to go. Want to know what's happening? Hear when your fast moves into each new phase. Every notification switches on or off on its own.</p>
+      </div>
+      <div class="feature-media"><Shot class="phone" src={notifications} dark={notificationsDark} widths={[300, 620]} sizes={phoneSizes} loading="lazy" alt="Faster's notification settings: reminders around the eating window and during a fast, like a new phase, halfway there and goal reached, each switched on or off." /></div>
+    </section>
   </div>
 
   <section class="band" id="privacy">
@@ -281,7 +291,7 @@ if (matchMedia('(hover: hover) and (prefers-reduced-motion: no-preference)').mat
       const box = h1.getBoundingClientRect(), size = tile.offsetWidth;
       const dx = e.clientX - (box.left + tile.offsetLeft - h1.offsetLeft + size / 2);
       const dy = e.clientY - (box.top + tile.offsetTop - h1.offsetTop + size / 2);
-      tile.style.translate = `${(dx * 0.3).toFixed(1)}px ${(dy * 0.3).toFixed(1)}px`;
+      tile.style.translate = `${(dx * 0.2).toFixed(1)}px ${(dy * 0.2).toFixed(1)}px`;
     });
     tile.addEventListener('pointerleave', () => { tile.style.translate = ''; });
   }

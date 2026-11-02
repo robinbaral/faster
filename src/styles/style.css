@@ -153,7 +153,8 @@ p { margin: 0; }
 @media (max-width: 640px) { .fan .l2, .fan .r2 { display: none; } }
 
 /* Footer */
-footer { background: var(--footer); color: #f5f5f7; padding: 56px 0 40px; position: relative; z-index: 4; }
+/* Pulled up a pixel to cover the half-blended row where the closing phones are clipped on fractional layouts. */
+footer { background: var(--footer); color: #f5f5f7; padding: 56px 0 40px; margin-top: -1px; position: relative; z-index: 4; }
 footer .brand { color: #f5f5f7; }
 footer .tagline { color: #98989d; margin: 14px 0 40px; }
 footer .row { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; font-size: 15px; color: #98989d; }

@@ -5,6 +5,7 @@ import type { ImageMetadata } from 'astro';
 import Base from '../layouts/Base.astro';
 import Brand from './Brand.astro';
 import Footer from './Footer.astro';
+import LanguageMenu from './LanguageMenu.astro';
 import Shot from './Shot.astro';
 import StoreBadge from './StoreBadge.astro';
 import { strings } from '../i18n';
@@ -119,6 +120,7 @@ const tileSizes = 'clamp(39px, 7.06vw, 95px)';
       <a href="#privacy">{t.nav.privacy}</a>
       <a href="#faq">{t.nav.faq}</a>
     </nav>
+    <LanguageMenu lang={lang} />
     <StoreBadge small label={t.store} soon={t.soon.badge} />
   </div>
 </header>
@@ -287,13 +289,13 @@ if (matchMedia('(hover: hover) and (prefers-reduced-motion: no-preference)').mat
 
 // Visitors whose browser prefers another of the site's languages are offered that version, in
 // that language. Nobody is redirected: search engines and people abroad see the page they asked
-// for. Choosing a language in the footer, or closing the offer, stops it for good.
+// for. Choosing a language in the header or footer, or closing the offer, stops it for good.
 type Offer = { lang: string; href: string; text: string; link: string; close: string };
 const KEY = 'faster-lang';
 const remembered = () => { try { return localStorage.getItem(KEY); } catch { return null; } };
 const remember = (value: string) => { try { localStorage.setItem(KEY, value); } catch {} };
 
-for (const a of document.querySelectorAll<HTMLAnchorElement>('footer .languages a')) {
+for (const a of document.querySelectorAll<HTMLAnchorElement>('.lang-menu a, footer .languages a')) {
   a.addEventListener('click', () => remember(a.hreflang));
 }
 

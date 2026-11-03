@@ -16,8 +16,8 @@ export default {
   },
 
   goals: {
-    title: 'Wähle ein Ziel. Behalte jedes Fasten.',
-    text: 'Fang sanft an oder geh weiter und schau dir danach jedes Fasten an: wie lange es lief und ob du dein Ziel erreicht hast, nach Woche und Monat gruppiert. Sortiere nach Datum, Dauer oder Ziel. Vergessen, auf Start oder Ende zu tippen? Korrigiere die Zeiten einfach nachträglich.',
+    title: 'Setz dir ein Ziel. Behalte den Überblick.',
+    text: 'Fang sanft an oder mach weiter und schau dir danach jedes Fasten an: wie lange es lief und ob du dein Ziel erreicht hast, nach Woche und Monat gruppiert. Vergessen, auf Start oder Ende zu tippen? Korrigiere die Zeiten einfach nachträglich.',
     label: 'Fastenziele',
     custom: 'Eigenes Ziel, bis 72 h',
     alt: 'Der Verlauf in Faster, gruppiert in diese Woche, letzte Woche und letzten Monat: jedes Fasten mit Zeiten, Dauer und ob es sein Ziel erreicht hat.',
@@ -29,7 +29,7 @@ export default {
   },
   themes: {
     title: 'Ganz dein Stil.',
-    text: 'Wähle aus fünf Themes, jedes mit passendem App-Symbol und Widgets. Das App-Symbol zeigt sogar dein Fastenziel. Standard ist kostenlos, ein einziger Kauf schaltet den Rest frei.',
+    text: 'Wähle aus fünf Themes, jedes mit passendem App-Symbol und Widgets. Das App-Symbol zeigt dein Fastenziel. Ein Theme ist kostenlos, die vier weiteren kannst du optional per Einmalkauf freischalten.',
     night: 'Faster im Theme Nacht: kühles Blau und Violett auf Dunkel.',
     fullphase: 'Faster im Theme Phasenfarbe: der ganze Bildschirm in der Farbe der aktuellen Phase.',
     pop: 'Faster im Theme Pop: flache, verspielte Farbflächen.',

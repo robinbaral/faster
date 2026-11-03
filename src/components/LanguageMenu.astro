@@ -1,0 +1,36 @@
+---
+import { strings } from '../i18n';
+import { locale, locales, type LocaleCode } from '../i18n/locales';
+
+// The language picker in the header. Without `lang`, it sits on an English page like the privacy policy.
+interface Props { lang?: LocaleCode }
+const { lang } = Astro.props;
+const here = locale(lang ?? 'en');
+const label = strings[here.code].footer.languages;
+const base = import.meta.env.BASE_URL;
+---
+<details class="lang-menu">
+  <summary aria-label={`${label}: ${here.name}`}>
+    <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7.5" /><path d="M2.5 10h15M10 2.5c2.2 2.1 3.2 4.6 3.2 7.5s-1 5.4-3.2 7.5c-2.2-2.1-3.2-4.6-3.2-7.5s1-5.4 3.2-7.5z" /></svg>
+    {here.code.slice(0, 2).toUpperCase()}
+  </summary>
+  <ul>
+    {locales.map((l) => (
+      <li><a href={`${base}${l.dir}`} hreflang={l.hreflang} lang={l.hreflang} aria-current={l.code === lang ? 'page' : undefined}>{l.name}</a></li>
+    ))}
+  </ul>
+</details>
+
+<script>
+// Like any menu, it closes on a click elsewhere and on Escape.
+const menu = document.querySelector<HTMLDetailsElement>('.lang-menu')!;
+document.addEventListener('click', (e) => {
+  if (!menu.contains(e.target as Node)) menu.open = false;
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && menu.open) {
+    menu.open = false;
+    menu.querySelector('summary')!.focus();
+  }
+});
+</script>

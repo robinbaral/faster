@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import Brand from '../components/Brand.astro';
 import Footer from '../components/Footer.astro';
+import LanguageMenu from '../components/LanguageMenu.astro';
 
 const base = import.meta.env.BASE_URL;
 const ld = `{
@@ -37,6 +38,7 @@ const ld = `{
       <a href={`${base}#features`}>Features</a>
       <a href={`${base}#faq`}>FAQ</a>
     </nav>
+    <LanguageMenu />
   </div>
 </header>
 

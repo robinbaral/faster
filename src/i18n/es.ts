@@ -6,7 +6,7 @@ export default {
   social: 'Sigue tu ayuno fase a fase, de la digestión a la quema de grasa y la cetosis. Sencillo, privado y sin cuenta.',
   nav: { features: 'Funciones', privacy: 'Privacidad', faq: 'Preguntas' },
   store: 'Descarga Faster en el App Store',
-  soon: { badge: 'Próximamente en el App Store', tag: 'Próximamente para iPhone', meta: 'Próximamente en el App Store.', q: '¿Cuándo puedo descargar Faster?', a: 'Faster llegará pronto al App Store para iPhone. En cuanto esté disponible, encontrarás el enlace de descarga en esta página.' },
+  soon: { badge: 'Pronto en el App Store', tag: 'Próximamente para iPhone', meta: 'Próximamente en el App Store.', q: '¿Cuándo puedo descargar Faster?', a: 'Faster llegará pronto al App Store para iPhone. En cuanto esté disponible, encontrarás el enlace de descarga en esta página.' },
 
   hero: {
     title: ['Tu ', ' ayuno,<br>fase ', ' a<br>fase ', ''],

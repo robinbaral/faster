@@ -9,7 +9,7 @@ import { appStore, released } from '../release';
 // Until the app is live, a plain "coming soon" label stands in for Apple's download badge,
 // which would link to a page that doesn't exist yet.
 interface Props { small?: boolean; label?: string; soon?: string }
-const { small, label = 'Download Faster on the App Store', soon = 'Coming soon to the App Store' } = Astro.props;
+const { small, label = 'Download Faster on the App Store', soon = 'Soon on the App Store' } = Astro.props;
 ---
 {released ? (
   <a class:list={['store', { small }]} href={appStore} aria-label={label}>

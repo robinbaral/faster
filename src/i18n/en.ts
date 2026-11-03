@@ -8,7 +8,7 @@ export default {
   nav: { features: 'Features', privacy: 'Privacy', faq: 'FAQ' },
   store: 'Download Faster on the App Store',
   // Shown until the app is on the App Store (see src/release.ts).
-  soon: { badge: 'Coming soon to the App Store', tag: 'Coming soon for iPhone', meta: 'Coming soon to the App Store.', q: 'When can I download Faster?', a: 'Faster is coming soon to the App Store for iPhone. As soon as it\'s available, you\'ll find the download link on this page.' },
+  soon: { badge: 'Soon on the App Store', tag: 'Coming soon for iPhone', meta: 'Coming soon to the App Store.', q: 'When can I download Faster?', a: 'Faster is coming soon to the App Store for iPhone. As soon as it\'s available, you\'ll find the download link on this page.' },
 
   hero: {
     // HTML, split where the three tiles go.

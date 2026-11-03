@@ -6,20 +6,27 @@ import iconDark from '../assets/icon-dark.png';
 interface Props {
   title: string;
   description: string;
+  lang?: string;
+  // The page in every language it's published in, English first; it also stands in as x-default.
+  alternates?: { hreflang: string; href: string }[];
 }
-const { title, description } = Astro.props;
+const { title, description, lang = 'en', alternates = [] } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 ---
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title}</title>
 <meta name="description" content={description}>
 <link rel="canonical" href={canonical}>
+{alternates.map((a) => <link rel="alternate" hreflang={a.hreflang} href={a.href}>)}
+{alternates[0] && <link rel="alternate" hreflang="x-default" href={alternates[0].href}>}
+<!-- The SVG follows light and dark mode itself; browsers without SVG favicons (Safari) take the PNGs. -->
 <link rel="icon" href={icon.src} media="(prefers-color-scheme: light)">
 <link rel="icon" href={iconDark.src} media="(prefers-color-scheme: dark)">
+<link rel="icon" href={`${import.meta.env.BASE_URL}favicon.svg`} type="image/svg+xml" sizes="any">
 <link rel="apple-touch-icon" href={icon.src}>
 <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">

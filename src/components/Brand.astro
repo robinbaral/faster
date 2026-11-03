@@ -2,5 +2,8 @@
 import Shot from './Shot.astro';
 import icon from '../assets/icon.png';
 import iconDark from '../assets/icon-dark.png';
+
+interface Props { href?: string }
+const { href = import.meta.env.BASE_URL } = Astro.props;
 ---
-<a class="brand" href={import.meta.env.BASE_URL}><Shot src={icon} dark={iconDark} widths={[32, 64]} sizes="32px" />Faster</a>
+<a class="brand" href={href}><Shot src={icon} dark={iconDark} widths={[32, 64]} sizes="32px" />Faster</a>

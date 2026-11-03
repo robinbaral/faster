@@ -4,10 +4,17 @@ import rim from '../assets/badge/badge-vector.svg?url';
 import logo from '../assets/badge/badge-apple-logo.svg?url';
 import word from '../assets/badge/badge-store-word.svg?url';
 import smallText from '../assets/badge/badge-download-text.svg?url';
+import { appStore, released } from '../release';
 
-interface Props { small?: boolean }
-const { small } = Astro.props;
+// Until the app is live, a plain "coming soon" label stands in for Apple's download badge,
+// which would link to a page that doesn't exist yet.
+interface Props { small?: boolean; label?: string; soon?: string }
+const { small, label = 'Download Faster on the App Store', soon = 'Coming soon to the App Store' } = Astro.props;
 ---
-<a class:list={['store', { small }]} href="https://apps.apple.com/app/id6829356882" aria-label="Download Faster on the App Store">
-  <span class="badge-art"><img class="bg" src={bg} alt=""><img class="rim" src={rim} alt=""><img class="logo" src={logo} alt=""><img class="word" src={word} alt=""><img class="small-text" src={smallText} alt=""></span>
-</a>
+{released ? (
+  <a class:list={['store', { small }]} href={appStore} aria-label={label}>
+    <span class="badge-art"><img class="bg" src={bg} alt=""><img class="rim" src={rim} alt=""><img class="logo" src={logo} alt=""><img class="word" src={word} alt=""><img class="small-text" src={smallText} alt=""></span>
+  </a>
+) : (
+  <span class:list={['soon-badge', { small }]}><img src={logo} alt="">{soon}</span>
+)}

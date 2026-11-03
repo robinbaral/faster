@@ -64,6 +64,15 @@ p { margin: 0; }
 /* Apple's white badge on dark backgrounds: the same artwork, inverted. */
 @media (prefers-color-scheme: dark) { .badge-art { filter: invert(1); } }
 
+/* Until launch: a label in the badge's place, and a note above the headline */
+.soon-badge { display: inline-flex; flex: none; align-items: center; gap: 10px; height: 53px; padding: 0 18px 0 16px; border-radius: 10px; background: #000; color: #fff; font-size: 16px; font-weight: 600; white-space: nowrap; }
+.soon-badge img { height: 24px; width: auto; }
+.soon-badge.small { height: 38px; padding: 0 12px 0 11px; gap: 7px; border-radius: 8px; font-size: 13px; }
+.soon-badge.small img { height: 17px; }
+@media (prefers-color-scheme: dark) { .soon-badge { background: #fff; color: #000; } .soon-badge img { filter: invert(1); } }
+@media (max-width: 420px) { .site-header .soon-badge { display: none; } }
+.soon-tag { display: inline-block; margin-bottom: 22px; padding: 6px 14px; border-radius: 999px; background: color-mix(in srgb, var(--accent) 14%, transparent); color: var(--accent); font-size: 15px; font-weight: 650; }
+
 /* Hero: the headline with the app's own pieces set into it */
 .hero { text-align: center; padding: clamp(56px, 8vw, 112px) 0 0; }
 .hero h1 { font-size: clamp(46px, 8.4vw, 112px); font-weight: 800; letter-spacing: -0.045em; line-height: 1.02; }
@@ -163,6 +172,17 @@ footer a { color: #f5f5f7; text-decoration: none; }
 footer a:hover { text-decoration: underline; }
 footer .credit { color: #98989d; }
 footer .credit a { color: #f5f5f7; }
+footer .languages { display: flex; flex-wrap: wrap; gap: 8px 20px; margin: -16px 0 32px; font-size: 15px; }
+footer .languages a { color: #98989d; }
+footer .languages a[aria-current] { color: #f5f5f7; }
+
+/* The offer of another language's version, for visitors whose browser prefers it */
+.lang-offer { position: fixed; z-index: 20; left: 50%; bottom: 16px; translate: -50% 0; width: max-content; max-width: calc(100vw - 32px); display: flex; align-items: center; flex-wrap: wrap; gap: 6px 14px; padding: 10px 10px 10px 18px; border-radius: 18px; background: var(--surface); color: var(--ink); box-shadow: 0 8px 32px rgb(0 0 0 / 0.18); font-size: 15px; }
+.lang-offer[hidden] { display: none; }
+.lang-offer a { font-weight: 650; text-decoration: none; }
+.lang-offer button { display: grid; place-items: center; width: 32px; height: 32px; margin-left: auto; padding: 0; border: 0; border-radius: 50%; background: none; color: var(--muted); cursor: pointer; }
+.lang-offer button:hover { background: var(--line); }
+.lang-offer svg { width: 16px; height: 16px; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
 
 /* Document pages (privacy) */
 .doc { max-width: 720px; margin: 0 auto; padding: clamp(48px, 7vw, 96px) 24px; }
@@ -175,3 +195,10 @@ footer .credit a { color: #f5f5f7; }
 .doc ul { padding-left: 22px; margin: 10px 0 0; }
 .doc li + li { margin-top: 6px; }
 .doc ul + p { margin-top: 12px; }
+
+/* Japanese: Japanese system fonts, no tightened tracking, and line breaks between phrases */
+:lang(ja) body, body:lang(ja) { font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif; }
+:lang(ja) :is(h1, h2, h3, summary, p) { letter-spacing: 0; word-break: auto-phrase; }
+:lang(ja) .hero h1 { font-size: clamp(34px, 6.6vw, 88px); line-height: 1.15; }
+:lang(ja) h2 { line-height: 1.25; }
+

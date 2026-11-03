@@ -1,0 +1,326 @@
+---
+// The home page in one language. Screenshots come from src/assets/<lang>/ when that language
+// has its own capture, and from src/assets/ otherwise.
+import type { ImageMetadata } from 'astro';
+import Base from '../layouts/Base.astro';
+import Brand from './Brand.astro';
+import Footer from './Footer.astro';
+import Shot from './Shot.astro';
+import StoreBadge from './StoreBadge.astro';
+import { strings } from '../i18n';
+import { locale, locales, type LocaleCode } from '../i18n/locales';
+import { appStore, released } from '../release';
+import icon from '../assets/icon.png';
+import iconDark from '../assets/icon-dark.png';
+import tileGauge from '../assets/tile-gauge.png';
+import tileBar from '../assets/tile-bar.png';
+import home from '../assets/home.png';
+import lock from '../assets/lock.png';
+import lockWidget from '../assets/lock-widget.png';
+
+interface Props { lang: LocaleCode }
+const { lang } = Astro.props;
+const t = strings[lang];
+const here = locale(lang);
+
+const images = import.meta.glob<{ default: ImageMetadata }>('../assets/**/*.png', { eager: true });
+const shot = (name: string) => (images[`../assets/${lang}/${name}.png`] ?? images[`../assets/${name}.png`]).default;
+const [timer, timerDark, history, historyDark, phase, phaseDark, stats, statsDark, notifications, notificationsDark, night, fullphase, pop] =
+  ['timer', 'timer-dark', 'history', 'history-dark', 'phase', 'phase-dark', 'stats', 'stats-dark', 'notifications', 'notifications-dark', 'night', 'fullphase', 'pop'].map(shot);
+
+const base = import.meta.env.BASE_URL;
+const absolute = (path: string) => new URL(path, Astro.site).href;
+const root = absolute(base);
+const url = absolute(`${base}${here.dir}`);
+const og = absolute(`${base}images/og.png`);
+const privacy = `${base}privacy/`;
+const html = (s: string) => s.replaceAll('{privacy}', privacy);
+const text = (s: string) => s.replace(/<[^>]+>/g, '');
+// Until launch, the description says the app is coming, and the FAQ opens with when.
+const description = released ? t.description : `${t.description} ${t.soon.meta}`;
+const social = released ? t.social : `${t.social} ${t.soon.meta}`;
+const faq = released ? t.faq.items : [{ q: t.soon.q, a: t.soon.a }, ...t.faq.items];
+const alternates = locales.map((l) => ({ hreflang: l.hreflang, href: absolute(`${base}${l.dir}`) }));
+
+const ld = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    { '@type': 'WebSite', '@id': `${root}#website`, url: root, name: 'Faster', inLanguage: locales.map((l) => l.hreflang) },
+    {
+      '@type': 'MobileApplication',
+      '@id': `${root}#app`,
+      name: t.app.name,
+      alternateName: 'Faster',
+      description: t.app.description,
+      operatingSystem: 'iOS 17.0 or later',
+      applicationCategory: 'HealthApplication',
+      applicationSubCategory: 'Intermittent fasting tracker',
+      image: absolute(icon.src),
+      screenshot: [timer, phase, stats, history].map((image) => absolute(image.src)),
+      featureList: t.app.features,
+      inLanguage: ['en', 'de', 'es', 'fr', 'pt-BR', 'ja'],
+      author: { '@type': 'Person', name: 'Robin' },
+      url,
+      isAccessibleForFree: true,
+      // Not offered or downloadable until it's on the App Store.
+      ...(released && {
+        offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD', availability: 'https://schema.org/InStock' },
+        downloadUrl: appStore,
+        installUrl: appStore,
+      }),
+    },
+    {
+      '@type': 'FAQPage',
+      '@id': `${url}#faq`,
+      inLanguage: here.hreflang,
+      mainEntity: faq.map((item: { q: string; a: string; ld?: string }) => ({
+        '@type': 'Question',
+        name: item.q,
+        acceptedAnswer: { '@type': 'Answer', text: item.ld ?? text(item.a) },
+      })),
+    },
+  ],
+};
+
+// Every other version's offer, each in its own language, for the banner below.
+const offers = locales
+  .filter((l) => l.code !== lang)
+  .map((l) => ({ lang: l.hreflang, href: `${base}${l.dir}`, ...strings[l.code].banner }));
+
+// Each `sizes` mirrors the width the stylesheet gives that image.
+const phoneSizes = 'min(330px, 74vw)';
+const tileSizes = 'clamp(39px, 7.06vw, 95px)';
+---
+<Base lang={here.hreflang} title={t.title} description={description} alternates={alternates}>
+<Fragment slot="head">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Faster">
+<meta property="og:locale" content={here.og}>
+{locales.filter((l) => l !== here).map((l) => <meta property="og:locale:alternate" content={l.og}>)}
+<meta property="og:title" content={t.title}>
+<meta property="og:description" content={social}>
+<meta property="og:image" content={og}>
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content={url}>
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content={t.title}>
+<meta name="twitter:description" content={social}>
+<meta name="twitter:image" content={og}>
+{released && <meta name="apple-itunes-app" content="app-id=6829356882">}
+<script type="application/ld+json" set:html={JSON.stringify(ld)} />
+</Fragment>
+
+<header class="site-header">
+  <div class="wrap">
+    <Brand href={`${base}${here.dir}`} />
+    <nav>
+      <a href="#features">{t.nav.features}</a>
+      <a href="#privacy">{t.nav.privacy}</a>
+      <a href="#faq">{t.nav.faq}</a>
+    </nav>
+    <StoreBadge small label={t.store} soon={t.soon.badge} />
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      {!released && <p class="soon-tag">{t.soon.tag}</p>}
+      <h1>
+        <Fragment set:html={t.hero.title[0]} /><span class="tile"><Shot src={icon} dark={iconDark} widths={[96, 192]} sizes={tileSizes} loading="eager" /></span><Fragment set:html={t.hero.title[1]} /><span class="tile"><Shot src={tileGauge} widths={[96, 192]} sizes={tileSizes} loading="eager" /></span><Fragment set:html={t.hero.title[2]} /><span class="tile inset"><Shot src={tileBar} widths={[96, 192]} sizes={tileSizes} loading="eager" /></span><Fragment set:html={t.hero.title[3]} />
+      </h1>
+      <p class="lede">{t.hero.lede}</p>
+      <div class="cta">
+        <StoreBadge label={t.store} soon={t.soon.badge} />
+        <span class="note">{t.hero.note}</span>
+      </div>
+      <Shot class="hero-phone phone" src={timer} dark={timerDark} widths={[330, 620]} sizes={phoneSizes} loading="eager" fetchpriority="high" alt={t.hero.alt} />
+    </div>
+  </section>
+
+  <div class="wrap features" id="features">
+    <section class="feature">
+      <div class="feature-text">
+        <h2>{t.goals.title}</h2>
+        <p>{t.goals.text}</p>
+        <div class="chips" aria-label={t.goals.label}>
+          <span class="chip">12:12</span>
+          <span class="chip">14:10</span>
+          <span class="chip">16:8</span>
+          <span class="chip">18:6</span>
+          <span class="chip">20:4</span>
+          <span class="chip">23:1</span>
+          <span class="chip">{t.goals.custom}</span>
+        </div>
+      </div>
+      <div class="feature-media"><Shot class="phone" src={history} dark={historyDark} widths={[300, 620]} sizes={phoneSizes} loading="lazy" alt={t.goals.alt} /></div>
+    </section>
+
+    <section class="feature flip">
+      <div class="feature-text">
+        <h2>{t.phases.title}</h2>
+        <p>{t.phases.text}</p>
+      </div>
+      <div class="feature-media"><Shot class="phone" src={phase} dark={phaseDark} widths={[300, 620]} sizes={phoneSizes} loading="lazy" alt={t.phases.alt} /></div>
+    </section>
+
+    <section class="feature">
+      <div class="feature-text">
+        <h2>{t.themes.title}</h2>
+        <p>{t.themes.text}</p>
+      </div>
+      <div class="feature-media">
+        <div class="trio">
+          <Shot class="phone" src={night} widths={[210, 420]} sizes="min(210px, 30vw)" loading="lazy" alt={t.themes.night} />
+          <Shot class="phone" src={fullphase} widths={[210, 420]} sizes="min(210px, 30vw)" loading="lazy" alt={t.themes.fullphase} />
+          <Shot class="phone" src={pop} widths={[210, 420]} sizes="min(210px, 30vw)" loading="lazy" alt={t.themes.pop} />
+        </div>
+      </div>
+    </section>
+
+    <section class="feature flip">
+      <div class="feature-text">
+        <h2>{t.widgets.title}</h2>
+        <p>{t.widgets.text}</p>
+      </div>
+      <div class="feature-media">
+        <div class="pair">
+          <Shot class="phone" src={home} widths={[250, 500]} sizes="min(250px, 42vw)" loading="lazy" alt={t.widgets.home} />
+          <div class="phone lock">
+            <Shot src={lock} widths={[250, 500]} sizes="min(250px, 42vw)" loading="lazy" />
+            <Shot class="lock-widget" src={lockWidget} widths={[320, 640]} sizes="min(320px, 54vw)" loading="lazy" alt={t.widgets.lock} />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="feature">
+      <div class="feature-text">
+        <h2>{t.stats.title}</h2>
+        <p>{t.stats.text}</p>
+      </div>
+      <div class="feature-media"><Shot class="phone" src={stats} dark={statsDark} widths={[300, 620]} sizes={phoneSizes} loading="lazy" alt={t.stats.alt} /></div>
+    </section>
+
+    <section class="feature flip">
+      <div class="feature-text">
+        <h2>{t.notifications.title}</h2>
+        <p>{t.notifications.text}</p>
+      </div>
+      <div class="feature-media"><Shot class="phone" src={notifications} dark={notificationsDark} widths={[300, 620]} sizes={phoneSizes} loading="lazy" alt={t.notifications.alt} /></div>
+    </section>
+  </div>
+
+  <section class="band" id="privacy">
+    <div class="wrap">
+      <h2>{t.privacy.title}</h2>
+      <div class="points">
+        <div class="point">
+          <svg viewBox="0 0 40 40" aria-hidden="true"><path fill-rule="evenodd" d="M12 16v-4a8 8 0 0 1 16 0v4h1a5 5 0 0 1 5 5v12a5 5 0 0 1-5 5H11a5 5 0 0 1-5-5V21a5 5 0 0 1 5-5h1zm4 0h8v-4a4 4 0 0 0-8 0v4zm4 7a3 3 0 0 0-1.5 5.6V31a1.5 1.5 0 0 0 3 0v-2.4A3 3 0 0 0 20 23z"/></svg>
+          <h3>{t.privacy.points[0].title}</h3>
+          <p set:html={html(t.privacy.points[0].text)} />
+        </div>
+        <div class="point">
+          <svg viewBox="0 0 40 40" aria-hidden="true"><path fill-rule="evenodd" d="M20 3l14 5v10c0 9.5-6 16.6-14 19C12 34.6 6 27.5 6 18V8l14-5zm6.4 12.6a1.8 1.8 0 0 0-2.5 0L18 21.5l-2.9-2.9a1.8 1.8 0 1 0-2.5 2.5l4.1 4.1a1.8 1.8 0 0 0 2.6 0l7.1-7.1a1.8 1.8 0 0 0 0-2.5z"/></svg>
+          <h3>{t.privacy.points[1].title}</h3>
+          <p set:html={html(t.privacy.points[1].text)} />
+        </div>
+        <div class="point">
+          <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 3a2.5 2.5 0 0 1 2.5 2.5v.8A11 11 0 0 1 31 17v6.5l3 4.2a1.8 1.8 0 0 1-1.5 2.8h-25A1.8 1.8 0 0 1 6 27.7l3-4.2V17a11 11 0 0 1 8.5-10.7v-.8A2.5 2.5 0 0 1 20 3zm-4.5 30h9a4.5 4.5 0 0 1-9 0z"/></svg>
+          <h3>{t.privacy.points[2].title}</h3>
+          <p set:html={html(t.privacy.points[2].text)} />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq" id="faq">
+    <div class="wrap">
+      <h2>{t.faq.title}</h2>
+      {faq.map((item) => <details><summary>{item.q}</summary><p set:html={html(item.a)} /></details>)}
+      <p class="disclaimer">{t.faq.disclaimer}</p>
+    </div>
+  </section>
+
+  <section class="final">
+    <div class="wrap">
+      <h2>{t.final.title}</h2>
+      <p>{t.final.text}</p>
+      <StoreBadge label={t.store} soon={t.soon.badge} />
+    </div>
+    <div class="fan" aria-hidden="true">
+      <Shot class="phone l2" src={stats} dark={statsDark} widths={[190, 380]} sizes="clamp(110px, 15vw, 190px)" loading="lazy" />
+      <Shot class="phone l1" src={night} widths={[240, 480]} sizes="clamp(140px, 19vw, 240px)" loading="lazy" />
+      <Shot class="phone r1" src={fullphase} widths={[240, 480]} sizes="clamp(140px, 19vw, 240px)" loading="lazy" />
+      <Shot class="phone r2" src={home} widths={[190, 380]} sizes="clamp(110px, 15vw, 190px)" loading="lazy" />
+      <Shot class="phone c" src={timer} dark={timerDark} widths={[300, 620]} sizes="clamp(170px, 24vw, 300px)" loading="lazy" />
+    </div>
+  </section>
+</main>
+
+<Footer lang={lang} />
+
+<aside class="lang-offer" hidden>
+  <p></p>
+  <a></a>
+  <button type="button"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 5l10 10M15 5L5 15" /></svg></button>
+</aside>
+
+<script is:inline type="application/json" id="lang-offers" set:html={JSON.stringify(offers)} />
+
+<script>
+// A hovered headline tile follows the cursor a little, and springs back to rest when it leaves.
+if (matchMedia('(hover: hover) and (prefers-reduced-motion: no-preference)').matches) {
+  const h1 = document.querySelector<HTMLElement>('.hero h1')!;
+  for (const tile of h1.querySelectorAll<HTMLElement>('.tile')) {
+    tile.addEventListener('pointermove', (e) => {
+      // Offsets ignore `translate`, so this is the tile's resting spot, not where the pull has moved it.
+      const box = h1.getBoundingClientRect(), size = tile.offsetWidth;
+      const dx = e.clientX - (box.left + tile.offsetLeft - h1.offsetLeft + size / 2);
+      const dy = e.clientY - (box.top + tile.offsetTop - h1.offsetTop + size / 2);
+      tile.style.translate = `${(dx * 0.2).toFixed(1)}px ${(dy * 0.2).toFixed(1)}px`;
+    });
+    tile.addEventListener('pointerleave', () => { tile.style.translate = ''; });
+  }
+}
+
+// Visitors whose browser prefers another of the site's languages are offered that version, in
+// that language. Nobody is redirected: search engines and people abroad see the page they asked
+// for. Choosing a language in the footer, or closing the offer, stops it for good.
+type Offer = { lang: string; href: string; text: string; link: string; close: string };
+const KEY = 'faster-lang';
+const remembered = () => { try { return localStorage.getItem(KEY); } catch { return null; } };
+const remember = (value: string) => { try { localStorage.setItem(KEY, value); } catch {} };
+
+for (const a of document.querySelectorAll<HTMLAnchorElement>('footer .languages a')) {
+  a.addEventListener('click', () => remember(a.hreflang));
+}
+
+if (!remembered()) {
+  const here = document.documentElement.lang.toLowerCase();
+  const offers: Offer[] = JSON.parse(document.getElementById('lang-offers')!.textContent!);
+  const base = (tag: string) => tag.toLowerCase().split('-')[0];
+  // The first preferred language the site has decides: if it's this page's, there's nothing to offer.
+  for (const preferred of navigator.languages) {
+    const p = preferred.toLowerCase();
+    if (p === here || base(p) === base(here)) break;
+    const offer = offers.find((o) => o.lang.toLowerCase() === p) ?? offers.find((o) => base(o.lang) === base(p));
+    if (!offer) continue;
+    const box = document.querySelector<HTMLElement>('.lang-offer')!;
+    box.lang = offer.lang;
+    box.querySelector('p')!.textContent = offer.text;
+    const link = box.querySelector('a')!;
+    link.href = offer.href;
+    link.hreflang = offer.lang;
+    link.textContent = offer.link;
+    link.addEventListener('click', () => remember(offer.lang));
+    const close = box.querySelector('button')!;
+    close.setAttribute('aria-label', offer.close);
+    close.addEventListener('click', () => { remember('dismissed'); box.hidden = true; });
+    box.hidden = false;
+    break;
+  }
+}
+</script>
+</Base>

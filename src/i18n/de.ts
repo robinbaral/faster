@@ -56,7 +56,7 @@ export default {
     points: [
       { title: 'Kein Konto', text: 'Öffne die App und starte dein Fasten. Du musst dich nicht registrieren.' },
       { title: 'Keine Werbung, kein Tracking', text: 'Keine Nutzungsanalyse, keine Werbung, und die App sendet keine Daten an mich. Mehr dazu findest du in der <a href="{privacy}" hreflang="en">Datenschutzerklärung</a> (auf Englisch).' },
-      { title: 'Erinnerungen nach Bedarf', text: 'Lass dich erinnern, wenn dein Essensfenster endet, eine neue Phase beginnt oder du dein Ziel erreichst. Alle Erinnerungen werden direkt auf deinem Gerät geplant.' },
+      { title: 'Erinnerungen nach deinem Geschmack', text: 'Lass dich erinnern, wenn dein Essensfenster endet, eine neue Phase beginnt oder du dein Ziel erreichst. Alle Erinnerungen werden direkt auf deinem Gerät geplant.' },
     ],
   },
 

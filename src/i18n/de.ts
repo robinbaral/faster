@@ -46,7 +46,7 @@ export default {
     alt: 'Die Statistik in Faster: ein Einblick zur Zeit in der Fettverbrennung, die Fastenzeiten der letzten 14 Tage und ein Trend.',
   },
   notifications: {
-    title: 'Mitteilungen nach deinen Wünschen.',
+    title: 'Erinnerungen nach deinem Geschmack.',
     text: 'Wähle, wann Faster dich benachrichtigt: beim Erreichen deines Ziels, nach der Hälfte der Fastenzeit, eine Stunde vor dem Ziel oder beim Beginn einer neuen Phase. Jede Mitteilung kannst du einzeln ein- oder ausschalten.',
     alt: 'Die Mitteilungseinstellungen in Faster: Hinweise rund ums Essensfenster und während des Fastens, etwa neue Phase, Halbzeit und Ziel erreicht, jeweils ein- oder ausgeschaltet.',
   },
@@ -56,7 +56,7 @@ export default {
     points: [
       { title: 'Kein Konto', text: 'Öffne die App und starte dein Fasten. Du musst dich nicht registrieren.' },
       { title: 'Keine Werbung, kein Tracking', text: 'Keine Nutzungsanalyse, keine Werbung, und die App sendet keine Daten an mich. Mehr dazu findest du in der <a href="{privacy}" hreflang="en">Datenschutzerklärung</a> (auf Englisch).' },
-      { title: 'Erinnerungen nach deinem Geschmack', text: 'Lass dich erinnern, wenn dein Essensfenster endet, eine neue Phase beginnt oder du dein Ziel erreichst. Alle Erinnerungen werden direkt auf deinem Gerät geplant.' },
+      { title: 'Erinnerungen nur auf deinem Gerät', text: 'Lass dich erinnern, wenn dein Essensfenster endet, eine neue Phase beginnt oder du dein Ziel erreichst. Alle Erinnerungen werden direkt auf deinem Gerät geplant.' },
     ],
   },
 

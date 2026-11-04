@@ -56,8 +56,8 @@ export default {
     title: 'Vos jeûnes restent sur votre iPhone.',
     points: [
       { title: 'Sans compte', text: 'Ouvrez l’app et commencez à jeûner. Aucune inscription nécessaire.' },
-      { title: 'Sans pub ni pistage', text: 'Aucune analyse d’utilisation, aucune publicité, et l’app n’envoie aucune donnée au développeur. Pour en savoir plus, consultez la <a href="{privacy}" hreflang="en">politique de confidentialité</a> (en anglais).' },
-      { title: 'Des rappels selon vos envies', text: 'Recevez un rappel à la fin de votre fenêtre de repas, au début de chaque phase et lorsque vous atteignez votre objectif. Tous les rappels sont programmés sur votre appareil.' },
+      { title: 'Sans pub', text: 'Faster n’affiche aucune publicité et ne contient aucun code publicitaire.' },
+      { title: 'Sans pistage', text: 'Aucune analyse d’utilisation, et l’app n’envoie aucune donnée au développeur. Pour en savoir plus, consultez la <a href="{privacy}" hreflang="en">politique de confidentialité</a> (en anglais).' },
     ],
   },
 

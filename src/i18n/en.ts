@@ -58,9 +58,9 @@ export default {
     title: 'Your fasts stay on your iPhone.',
     points: [
       { title: 'No account', text: "Open the app and start fasting. There's nothing to sign up for." },
+      { title: 'No ads', text: 'Faster shows no ads and contains no advertising code.' },
       // HTML
-      { title: 'No ads, no tracking', text: 'No analytics, no ads, and the app sends me no data. You can read more in the <a href="{privacy}">privacy policy</a>.' },
-      { title: 'Reminders on your terms', text: 'Get a reminder when your eating window closes, at each fasting phase and when you reach your goal. All reminders are scheduled on your device.' },
+      { title: 'No tracking', text: 'No analytics, and the app sends me no data. You can read more in the <a href="{privacy}">privacy policy</a>.' },
     ],
   },
 

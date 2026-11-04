@@ -55,8 +55,8 @@ export default {
     title: 'Seus jejuns ficam no seu iPhone.',
     points: [
       { title: 'Sem conta', text: 'Abra o app e comece seu jejum. Não precisa se cadastrar.' },
-      { title: 'Sem anúncios, sem rastreamento', text: 'Sem análise de uso, sem anúncios, e o app não envia nenhum dado para mim. Saiba mais na <a href="{privacy}" hreflang="en">política de privacidade</a> (em inglês).' },
-      { title: 'Lembretes do seu jeito', text: 'Receba um lembrete quando sua janela de alimentação terminar, ao começar cada fase e ao atingir sua meta. Todos os lembretes são agendados no seu aparelho.' },
+      { title: 'Sem anúncios', text: 'O Faster não mostra anúncios nem inclui código de publicidade.' },
+      { title: 'Sem rastreamento', text: 'Sem análise de uso, e o app não envia nenhum dado para mim. Saiba mais na <a href="{privacy}" hreflang="en">política de privacidade</a> (em inglês).' },
     ],
   },
 

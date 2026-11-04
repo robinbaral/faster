@@ -55,8 +55,8 @@ export default {
     title: 'Tus ayunos se quedan en tu iPhone.',
     points: [
       { title: 'Sin cuenta', text: 'Abre la app y empieza a ayunar. No necesitas registrarte.' },
-      { title: 'Sin anuncios ni rastreo', text: 'Sin analíticas, sin anuncios y la app no me envía ningún dato. Encontrarás más información en la <a href="{privacy}" hreflang="en">política de privacidad</a> (en inglés).' },
-      { title: 'Recordatorios a tu manera', text: 'Recibe un aviso cuando termine tu ventana de comidas, al empezar cada fase y al alcanzar tu objetivo. Todos los recordatorios se programan en tu dispositivo.' },
+      { title: 'Sin anuncios', text: 'Faster no muestra anuncios ni incluye código publicitario.' },
+      { title: 'Sin rastreo', text: 'Sin analíticas, y la app no me envía ningún dato. Encontrarás más información en la <a href="{privacy}" hreflang="en">política de privacidad</a> (en inglés).' },
     ],
   },
 

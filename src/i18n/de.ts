@@ -20,7 +20,7 @@ export default {
     text: 'Ob du kürzer oder länger fastest: Im Verlauf siehst du, wie lange du jeweils gefastet hast und ob du dein Ziel erreicht hast. Deine Einträge sind nach Wochen und Monaten gruppiert. Start oder Ende vergessen? Du kannst die Zeiten nachträglich anpassen.',
     label: 'Fastenziele',
     custom: 'Eigenes Ziel, bis 72 h',
-    alt: 'Der Verlauf in Faster zeigt Fastenzeiten aus dieser Woche, der letzten Woche und dem letzten Monat, jeweils mit Start- und Endzeit, Dauer und Zielerreichung.',
+    alt: 'Der Verlauf in Faster zeigt Fastenzeiten aus dieser und der letzten Woche, jeweils mit Start- und Endzeit, Dauer und Zielerreichung.',
   },
   phases: {
     title: 'Sieh, was in dir passiert.',

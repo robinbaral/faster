@@ -23,7 +23,7 @@ export default {
     text: 'Choose a shorter fast or a longer one, then look back at how long each fast lasted and whether you reached your goal. Your history is grouped by week and month, and you can sort it by date, duration or goal. Forgot to start or end the timer? You can adjust the times afterwards.',
     label: 'Fasting goals',
     custom: 'Custom, up to 72h',
-    alt: "Faster's history, grouped into this week, last week and last month: each fast with its times, duration and whether it reached its goal.",
+    alt: "Faster's history, grouped into this week and last week: each fast with its times, duration and whether it reached its goal.",
   },
   phases: {
     title: "See what's going on inside.",

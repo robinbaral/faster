@@ -20,7 +20,7 @@ export default {
     text: 'Prefere um jejum mais curto ou quer ficar mais tempo? Escolha sua meta e consulte depois a duração de cada jejum e se a meta foi atingida. O histórico fica organizado por semana e mês, com a opção de ordenar por data, duração ou meta. Esqueceu de iniciar ou encerrar o timer? Dá para corrigir os horários depois.',
     label: 'Metas de jejum',
     custom: 'Personalizada, até 72 h',
-    alt: 'O histórico do Faster mostra os jejuns desta semana, da semana passada e do mês passado, com horários, duração e indicação de meta atingida ou não.',
+    alt: 'O histórico do Faster mostra os jejuns desta semana e da semana passada, com horários, duração e indicação de meta atingida ou não.',
   },
   phases: {
     title: 'Veja o que acontece no seu corpo.',

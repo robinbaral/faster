@@ -20,7 +20,7 @@ export default {
     text: 'Tanto si prefieres ayunos cortos como si quieres alargarlos, puedes revisar cuánto duró cada uno y si alcanzaste tu objetivo. El historial se organiza por semanas y meses, con la opción de ordenar por fecha, duración u objetivo. ¿Se te pasó iniciar o detener el temporizador? Puedes corregir las horas después.',
     label: 'Objetivos de ayuno',
     custom: 'A tu medida, hasta 72 h',
-    alt: 'El historial de Faster muestra los ayunos de esta semana, la semana pasada y el mes pasado, con sus horas de inicio y fin, su duración y si se alcanzó el objetivo.',
+    alt: 'El historial de Faster muestra los ayunos de esta semana y la semana pasada, con sus horas de inicio y fin, su duración y si se alcanzó el objetivo.',
   },
   phases: {
     title: 'Mira lo que pasa en tu cuerpo.',

@@ -21,7 +21,7 @@ export default {
     text: 'Que vous préfériez jeûner moins longtemps ou prolonger votre jeûne, retrouvez chaque séance dans votre historique, avec sa durée et l’objectif atteint ou non. Les séances sont regroupées par semaine et par mois. Vous pouvez les trier par date, durée ou objectif. Un oubli au démarrage ou à l’arrêt du minuteur ? Les horaires restent modifiables après coup.',
     label: 'Objectifs de jeûne',
     custom: 'Sur mesure, jusqu’à 72 h',
-    alt: 'L’historique de Faster présente les jeûnes de cette semaine, de la semaine dernière et du mois dernier, avec leurs horaires, leur durée et l’indication de l’objectif atteint ou non.',
+    alt: 'L’historique de Faster présente les jeûnes de cette semaine et de la semaine dernière, avec leurs horaires, leur durée et l’indication de l’objectif atteint ou non.',
   },
   phases: {
     title: 'Découvrez ce qui se passe dans votre corps.',

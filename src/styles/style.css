@@ -106,7 +106,12 @@ p { margin: 0; }
 .hero .lede { font-size: clamp(19px, 1.8vw, 23px); color: var(--muted); margin: 28px auto 34px; max-width: 34ch; }
 .hero .cta { display: flex; align-items: center; justify-content: center; gap: 18px; flex-wrap: wrap; }
 .hero .cta .note { font-size: 15px; color: var(--muted); }
-.hero-phone { width: min(330px, 74vw); margin: clamp(48px, 7vw, 80px) auto 0; }
+.hero-devices { position: relative; width: min(330px, 74vw); margin: clamp(48px, 7vw, 80px) auto 0; }
+.hero-devices .phone { width: 100%; }
+/* The watch stands in front of the phone's lower right, as if beside it on a table. */
+.hero-watch { position: absolute; width: 45%; right: -24%; bottom: 7%; }
+@media (max-width: 640px) { .hero-watch { width: 40%; right: -9%; bottom: 5%; } }
+.hero { overflow-x: clip; }
 
 /* Feature rows */
 /* Block padding only, so the .wrap's side gutters stay. */
@@ -123,7 +128,14 @@ p { margin: 0; }
 .pair .lock { margin-left: -50px; margin-bottom: 40px; position: relative; z-index: 1; }
 .pair .lock .lock-widget { position: absolute; top: 63%; left: -14%; width: 128%; max-width: none; }
 .trio .phone { width: min(210px, 30vw); }
-/* Each image sits in a <picture>, so the middle one is found through it. */
+.watch { filter: drop-shadow(0 24px 32px rgba(0, 0, 0, 0.22)); }
+/* The app in front, the face and ending a fast either side, like the themes' phones. */
+.watches { display: flex; align-items: center; }
+.watches .watch { width: min(200px, 29vw); }
+.watches > :nth-child(2) > .watch { width: min(245px, 36vw); margin: 0 -34px; position: relative; z-index: 1; }
+/* The three run a little wider than their column. On the left they hang into the page's margin
+   rather than over the text beside them. */
+@media (min-width: 861px) { .feature.flip .feature-media:has(.watches) { justify-content: flex-end; } }/* Each image sits in a <picture>, so the middle one is found through it. */
 .trio > :nth-child(2) > .phone { margin: 0 -48px 46px; z-index: 1; position: relative; }
 .chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
 .chip { background: var(--surface); border-radius: 999px; padding: 8px 15px; font-size: 15px; font-weight: 600; font-variant-numeric: tabular-nums; }

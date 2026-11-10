@@ -1,8 +1,8 @@
 import type { Strings } from './index';
 
 export default {
-  title: 'Faster: temporizador de ayuno intermitente para iPhone',
-  description: 'Faster es un temporizador de ayuno intermitente sencillo y privado para iPhone. Sigue tu ayuno por la digestión, la quema de grasa y la cetosis, con widgets, estadísticas y sin cuenta. Para 16:8, 18:6, 20:4 y OMAD.',
+  title: 'Faster: temporizador de ayuno intermitente para iPhone y Apple Watch',
+  description: 'Faster es un temporizador de ayuno intermitente sencillo y privado para iPhone y Apple Watch. Sigue tu ayuno por la digestión, la quema de grasa y la cetosis, con widgets, estadísticas y sin cuenta. Para 16:8, 18:6, 20:4 y OMAD.',
   social: 'Sigue tu ayuno fase a fase, de la digestión a la quema de grasa y la cetosis. Sencillo, privado y sin cuenta.',
   nav: { features: 'Funciones', privacy: 'Privacidad', faq: 'Preguntas' },
   store: 'Descarga Faster en el App Store',
@@ -40,8 +40,8 @@ export default {
     pop: 'Faster con el tema Pop: bloques de color planos y divertidos.',
   },
   widgets: {
-    title: 'En la pantalla bloqueada y en la de inicio.',
-    text: 'Sigue tu ayuno con los widgets, sin abrir la app. Entre ayunos, muestran cuánto queda de tu ventana de comidas.',
+    title: 'En la pantalla bloqueada, la de inicio y la esfera del reloj.',
+    text: 'Sigue tu ayuno con los widgets, sin abrir la app. Entre ayunos, muestran cuánto queda de tu ventana de comidas. En el Apple Watch, las complicaciones muestran tu ayuno en la esfera.',
     home: 'La pantalla de inicio de un iPhone con widgets de Faster en distintos temas.',
     lock: 'Los widgets de Faster en la pantalla bloqueada, ampliados: la fase de quema de grasa con su temporizador y objetivo, y un anillo que marca 14 horas.',
   },
@@ -52,12 +52,21 @@ export default {
   },
   notifications: {
     title: 'Notificaciones a tu manera.',
-    text: 'Elige cuándo quieres recibir avisos: al alcanzar tu objetivo, a mitad del ayuno, cuando falte una hora o al empezar una nueva fase. Puedes activar o desactivar cada notificación por separado.',
+    text: 'Elige cuándo quieres recibir avisos: al alcanzar tu objetivo, a mitad del ayuno, cuando falte una hora o al empezar una nueva fase. Puedes activar o desactivar cada notificación por separado. En el Apple Watch, puedes terminar el ayuno o sumar una hora desde la propia notificación.',
     alt: 'Los ajustes de notificaciones de Faster: avisos sobre la ventana de comidas y durante el ayuno, como nueva fase, a mitad de camino y objetivo logrado, cada uno activado o desactivado.',
   },
 
+  watch: {
+    title: 'En tu muñeca.',
+    text: 'Faster en el Apple Watch te muestra tu ayuno de un vistazo, fase a fase. Empieza, termina o programa un ayuno y cambia tu objetivo desde la muñeca. Todo se mantiene sincronizado con tu iPhone, aunque no lo lleves encima.',
+    app: 'Faster en el Apple Watch: un ayuno de 14 horas en la fase de quema de grasa, con la hora de inicio, el objetivo y el botón Terminar ayuno.',
+    end: 'Terminar un ayuno en el Apple Watch: su duración frente al objetivo de 16 horas, con el botón Terminar ayuno.',
+    face: 'Una esfera con las complicaciones de anillo y barra de Faster, ambas en la fase de quema de grasa a las 14 horas.',
+    hero: 'Faster en el Apple Watch con el mismo ayuno.',
+  },
+
   privacy: {
-    title: 'Tus ayunos se quedan en tu iPhone.',
+    title: 'Tus ayunos se quedan en tus dispositivos.',
     points: [
       { title: 'Sin cuenta', text: 'Abre la app y empieza a ayunar. No necesitas registrarte.' },
       { title: 'Sin anuncios', text: 'Faster no muestra anuncios ni incluye código publicitario.' },
@@ -74,7 +83,8 @@ export default {
       { q: '¿Cuándo empieza la quema de grasa durante el ayuno?', a: 'En muchas personas, el cuerpo recurre más a la grasa almacenada tras unas 12 horas sin comer, cuando ya ha gastado la mayor parte del glucógeno. Faster lo marca en su dial como la fase de quema de grasa. Es una referencia aproximada, no una medición médica.' },
       { q: '¿Faster es gratis?', a: 'Sí, Faster es gratis. Una compra única opcional desbloquea cuatro temas adicionales con iconos y widgets a juego. También me ayuda a seguir mejorando la app.' },
       { q: '¿Faster tiene widgets?', a: 'Sí. Faster tiene widgets para la pantalla bloqueada y la de inicio. Sigue tu ayuno con los widgets, sin abrir la app. Entre ayunos, muestran cuánto queda de tu ventana de comidas.' },
-      { q: '¿Faster necesita una cuenta o recopila mis datos?', a: 'No. No hay cuenta, ni analíticas, ni rastreo. Tus ayunos se guardan solo en tu iPhone y nunca se me envían. Consulta la <a href="{privacy}" hreflang="en">política de privacidad</a> (en inglés).', ld: 'No. No hay cuenta, ni analíticas, ni rastreo. Tus ayunos se guardan solo en tu iPhone y nunca se envían al desarrollador.' },
+      { q: '¿Faster funciona en el Apple Watch?', a: 'Sí. La app para Apple Watch muestra tu ayuno con sus fases y te permite empezar, terminar o programar un ayuno y cambiar tu objetivo. Las complicaciones llevan tu ayuno a la esfera, y las notificaciones incluyen botones para terminar el ayuno o sumar una hora. Todo se mantiene sincronizado con tu iPhone.' },
+      { q: '¿Faster necesita una cuenta o recopila mis datos?', a: 'No. No hay cuenta, ni analíticas, ni rastreo. Tus ayunos se guardan solo en tu iPhone y tu Apple Watch y nunca se me envían. Consulta la <a href="{privacy}" hreflang="en">política de privacidad</a> (en inglés).', ld: 'No. No hay cuenta, ni analíticas, ni rastreo. Tus ayunos se guardan solo en tu iPhone y tu Apple Watch y nunca se envían al desarrollador.' },
       { q: '¿Puedo corregir un ayuno si olvidé empezarlo o terminarlo?', a: 'Sí. Puedes cambiar la hora de inicio mientras el ayuno está en curso y ajustar tanto la hora de inicio como la de fin al terminarlo. En el Historial puedes editar o eliminar ayunos anteriores. Faster también puede recordarte que termines un ayuno si lo olvidas.' },
       { q: '¿En qué idiomas está Faster?', a: 'Faster está disponible en español, inglés, alemán, francés, portugués de Brasil y japonés.' },
       { q: '¿Quién desarrolla Faster?', a: 'Soy Robin y desarrollo Faster por mi cuenta. Si te gusta la app, la compra opcional de temas me ayuda a seguir trabajando en ella. ¿Tienes preguntas o ideas? Escríbeme a <a href="mailto:fasterfastingapp@proton.me">fasterfastingapp@proton.me</a>.', ld: 'Faster lo hace Robin, un desarrollador independiente. Puedes enviar preguntas e ideas a fasterfastingapp@proton.me.' },
@@ -84,7 +94,7 @@ export default {
 
   final: { title: '¿Listo para tu próximo ayuno?', text: 'Descárgala gratis. Un toque y empieza tu ayuno.' },
 
-  footer: { tagline: 'Un temporizador de ayuno intermitente sencillo para iPhone que respeta tu privacidad.', support: 'Soporte', privacy: 'Privacidad', home: 'Inicio', credit: 'Web de', languages: 'Idiomas' },
+  footer: { tagline: 'Un temporizador de ayuno intermitente sencillo para iPhone y Apple Watch que respeta tu privacidad.', support: 'Soporte', privacy: 'Privacidad', home: 'Inicio', credit: 'Web de', languages: 'Idiomas' },
 
   banner: { text: 'Faster también está en español.', link: 'Leer en español', close: 'Cerrar' },
 
@@ -96,6 +106,7 @@ export default {
       'Objetivos de 12:12, 14:10, 16:8, 18:6, 20:4, una comida al día y ayunos a tu medida de hasta 72 horas',
       'Plan semanal con un objetivo distinto para cada día',
       'Widgets para la pantalla bloqueada y la de inicio',
+      'App para Apple Watch con complicaciones y notificaciones con acciones',
       'Estadísticas, rachas, evolución y tendencias explicadas con palabras sencillas',
       'Historial de ayunos editable, ordenado por fecha, duración u objetivo',
       'Recordatorios para la ventana de comidas, cada fase y el objetivo',

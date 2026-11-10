@@ -2,8 +2,8 @@
 // `{privacy}` stands for the privacy policy's URL. The FAQ's structured data uses each answer
 // without its markup, or `ld` where that should read differently.
 export default {
-  title: 'Faster: Intermittent Fasting Timer for iPhone',
-  description: 'Faster is a simple, private intermittent fasting timer for iPhone. Follow your fast through digesting, fat burning and ketosis, with widgets, insights and no account. Supports 16:8, 18:6, 20:4 and OMAD.',
+  title: 'Faster: Intermittent Fasting Timer for iPhone and Apple Watch',
+  description: 'Faster is a simple, private intermittent fasting timer for iPhone and Apple Watch. Follow your fast through digesting, fat burning and ketosis, with widgets, insights and no account. Supports 16:8, 18:6, 20:4 and OMAD.',
   social: 'Follow your fast phase by phase, from digesting to fat burning and ketosis. Simple, private, no account.',
   nav: { features: 'Features', privacy: 'Privacy', faq: 'FAQ' },
   store: 'Download Faster on the App Store',
@@ -43,8 +43,8 @@ export default {
     pop: 'Faster in the Pop theme: flat, playful colour blocks.',
   },
   widgets: {
-    title: 'On your Lock Screen and Home Screen.',
-    text: 'Keep track of your fast with widgets, without opening the app. Between fasts, they show how much of your eating window is left.',
+    title: 'On your Lock Screen, Home Screen and watch face.',
+    text: 'Keep track of your fast with widgets, without opening the app. Between fasts, they show how much of your eating window is left. On Apple Watch, complications put your fast on your watch face.',
     home: "An iPhone Home Screen with Faster's widgets in different themes.",
     lock: "Faster's Lock Screen widgets, magnified: the fat burning phase with its timer and goal, and a ring showing 14 hours.",
   },
@@ -55,12 +55,21 @@ export default {
   },
   notifications: {
     title: 'Notifications, your way.',
-    text: "Choose which reminders you'd like: when you reach your goal, halfway through your fast, with one hour to go or when a new phase begins. You can turn each notification on or off separately.",
+    text: "Choose which reminders you'd like: when you reach your goal, halfway through your fast, with one hour to go or when a new phase begins. You can turn each notification on or off separately. On Apple Watch, you can end your fast or add an hour right from the notification.",
     alt: "Faster's notification settings: reminders around the eating window and during a fast, like a new phase, halfway there and goal reached, each switched on or off.",
   },
 
+  watch: {
+    title: 'On your wrist.',
+    text: 'Faster on Apple Watch shows your fast at a glance, phase by phase. Start, end or schedule a fast and change your goal from your wrist. It stays in sync with your iPhone, even when you fast without it nearby.',
+    app: 'Faster on Apple Watch: a fast at 14 hours in the fat burning phase, with its start and goal times and an End fast button.',
+    end: 'Ending a fast on Apple Watch: its length against the 16-hour goal, with an End fast button.',
+    face: 'A watch face with Faster\'s ring and bar complications, both showing the fat burning phase at 14 hours.',
+    hero: 'Faster on Apple Watch, showing the same fast.',
+  },
+
   privacy: {
-    title: 'Your fasts stay on your iPhone.',
+    title: 'Your fasts stay on your devices.',
     points: [
       { title: 'No account', text: "Open the app and start fasting. There's nothing to sign up for." },
       { title: 'No ads', text: 'Faster shows no ads and contains no advertising code.' },
@@ -79,7 +88,8 @@ export default {
       { q: 'When does fat burning start during a fast?', a: 'For many people, the body leans more on stored fat after roughly 12 hours without food, once most glycogen has been used. Faster marks this as the fat burning phase on its dial. It\'s a rough guide, not a medical measurement.' },
       { q: 'Is Faster free?', a: 'Yes, Faster is free to use. An optional one-time purchase unlocks four additional themes with matching app icons and widgets. It also helps me keep improving the app.' },
       { q: 'Does Faster have widgets?', a: 'Yes. Faster has Lock Screen and Home Screen widgets. Keep track of your fast with widgets, without opening the app. Between fasts, they show how much of your eating window is left.' },
-      { q: 'Does Faster need an account or collect my data?', a: 'No. There\'s no account, no analytics and no tracking. Your fasts are stored only on your iPhone and are never sent to me. See the <a href="{privacy}">privacy policy</a>.', ld: "No. There's no account, no analytics and no tracking. Your fasts are stored only on your iPhone and are never sent to the developer." },
+      { q: 'Does Faster work on Apple Watch?', a: 'Yes. The Apple Watch app shows your fast with its phases and lets you start, end or schedule a fast and change your goal. Complications put your fast on your watch face, and notifications come with buttons to end a fast or add an hour. Everything stays in sync with your iPhone.' },
+      { q: 'Does Faster need an account or collect my data?', a: 'No. There\'s no account, no analytics and no tracking. Your fasts are stored only on your iPhone and Apple Watch and are never sent to me. See the <a href="{privacy}">privacy policy</a>.', ld: "No. There's no account, no analytics and no tracking. Your fasts are stored only on your iPhone and Apple Watch and are never sent to the developer." },
       { q: 'Can I fix a fast if I forgot to start or end it?', a: 'Yes. You can change the start time while a fast is running, adjust both the start and end times when you finish, and edit or delete past fasts in History. Faster can also remind you if you forget to end a fast.' },
       { q: 'Which languages is Faster available in?', a: 'Faster is available in English, German, Spanish, French, Brazilian Portuguese and Japanese.' },
       { q: 'Who makes Faster?', a: 'I\'m Robin, and I make Faster on my own. If you like it, the optional theme purchase helps me keep working on it. Questions or ideas? Write to me at <a href="mailto:fasterfastingapp@proton.me">fasterfastingapp@proton.me</a>.', ld: 'Faster is made by Robin, an independent developer. Questions and ideas are welcome at fasterfastingapp@proton.me.' },
@@ -89,7 +99,7 @@ export default {
 
   final: { title: 'Ready for your next fast?', text: 'Free to download. Start your fast with one tap.' },
 
-  footer: { tagline: 'A simple, private intermittent fasting timer for iPhone.', support: 'Support', privacy: 'Privacy', home: 'Home', credit: 'Site by', languages: 'Languages' },
+  footer: { tagline: 'A simple, private intermittent fasting timer for iPhone and Apple Watch.', support: 'Support', privacy: 'Privacy', home: 'Home', credit: 'Site by', languages: 'Languages' },
 
   // Offered to visitors whose browser prefers this language while they read another version.
   banner: { text: 'Faster is also available in English.', link: 'Read in English', close: 'Close' },
@@ -102,6 +112,7 @@ export default {
       'Goals for 12:12, 14:10, 16:8, 18:6, 20:4, one meal a day and custom fasts up to 72 hours',
       'Goal Schedule, with its own goal for each day of the week',
       'Lock Screen and Home Screen widgets',
+      'Apple Watch app with complications and notifications you can act on',
       'Stats, streaks, trends and plain-language insights',
       'Editable fasting history, sorted by date, length or goal',
       'Reminders for the eating window, each phase and the goal',

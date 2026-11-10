@@ -58,7 +58,7 @@ export default {
     title: 'On your wrist.',
     text: 'Faster on Apple Watch shows your fast at a glance, phase by phase. Start, end or schedule a fast and change your goal from your wrist. It stays in sync with your iPhone, even when you fast without it nearby.',
     app: 'Faster on Apple Watch: a fast at 14 hours in the fat burning phase, with its start and goal times and an End fast button.',
-    notification: 'Faster\'s Fast complete notification on Apple Watch, with a gauge at 16 hours and buttons to end the fast or add an hour.',
+    end: 'Ending a fast on Apple Watch: its length against the 16-hour goal, with an End fast button.',
     face: 'A watch face with Faster\'s ring and bar complications, both showing the fat burning phase at 14 hours.',
     hero: 'Faster on Apple Watch, showing the same fast.',
   },

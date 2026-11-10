@@ -129,7 +129,7 @@ p { margin: 0; }
 .pair .lock .lock-widget { position: absolute; top: 63%; left: -14%; width: 128%; max-width: none; }
 .trio .phone { width: min(210px, 30vw); }
 .watch { filter: drop-shadow(0 24px 32px rgba(0, 0, 0, 0.22)); }
-/* The app in front, the face and a reminder either side, like the themes' phones. */
+/* The app in front, the face and ending a fast either side, like the themes' phones. */
 .watches { display: flex; align-items: center; }
 .watches .watch { width: min(200px, 29vw); }
 .watches > :nth-child(2) > .watch { width: min(245px, 36vw); margin: 0 -34px; position: relative; z-index: 1; }

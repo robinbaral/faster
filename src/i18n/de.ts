@@ -55,7 +55,7 @@ export default {
     title: 'Am Handgelenk.',
     text: 'Faster auf der Apple Watch zeigt dir dein Fasten auf einen Blick, Phase für Phase. Starte, beende oder plane ein Fasten und ändere dein Ziel direkt am Handgelenk. Alles bleibt mit deinem iPhone abgeglichen, auch wenn du es gerade nicht dabeihast.',
     app: 'Faster auf der Apple Watch: ein Fasten bei 14 Stunden in der Phase Fettverbrennung, mit Start- und Zielzeit und der Taste „Fasten beenden“.',
-    notification: 'Die Mitteilung „Fasten geschafft“ auf der Apple Watch, mit einer Anzeige bei 16 Stunden und Tasten zum Beenden oder für eine Stunde mehr.',
+    end: 'Fasten beenden auf der Apple Watch: die bisherige Dauer gegenüber dem 16-Stunden-Ziel, mit der Taste „Fasten beenden“.',
     face: 'Ein Zifferblatt mit den Komplikationen Ring und Balken von Faster, beide in der Phase Fettverbrennung bei 14 Stunden.',
     hero: 'Faster auf der Apple Watch mit demselben Fasten.',
   },

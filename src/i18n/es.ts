@@ -55,7 +55,7 @@ export default {
     title: 'En tu muñeca.',
     text: 'Faster en el Apple Watch te muestra tu ayuno de un vistazo, fase a fase. Empieza, termina o programa un ayuno y cambia tu objetivo desde la muñeca. Todo se mantiene sincronizado con tu iPhone, aunque no lo lleves encima.',
     app: 'Faster en el Apple Watch: un ayuno de 14 horas en la fase de quema de grasa, con la hora de inicio, el objetivo y el botón Terminar ayuno.',
-    notification: 'La notificación Ayuno completado en el Apple Watch, con un indicador en 16 horas y botones para terminar el ayuno o sumar una hora.',
+    end: 'Terminar un ayuno en el Apple Watch: su duración frente al objetivo de 16 horas, con el botón Terminar ayuno.',
     face: 'Una esfera con las complicaciones de anillo y barra de Faster, ambas en la fase de quema de grasa a las 14 horas.',
     hero: 'Faster en el Apple Watch con el mismo ayuno.',
   },

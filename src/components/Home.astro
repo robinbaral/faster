@@ -26,8 +26,8 @@ const here = locale(lang);
 
 const images = import.meta.glob<{ default: ImageMetadata }>('../assets/**/*.png', { eager: true });
 const shot = (name: string) => (images[`../assets/${lang}/${name}.png`] ?? images[`../assets/${name}.png`]).default;
-const [timer, timerDark, history, historyDark, phase, phaseDark, stats, statsDark, notifications, notificationsDark, night, fullphase, pop, watchApp, watchNotification, watchFace] =
-  ['timer', 'timer-dark', 'history', 'history-dark', 'phase', 'phase-dark', 'stats', 'stats-dark', 'notifications', 'notifications-dark', 'night', 'fullphase', 'pop', 'watch-app', 'watch-notification', 'watch-face'].map(shot);
+const [timer, timerDark, history, historyDark, phase, phaseDark, stats, statsDark, notifications, notificationsDark, night, fullphase, pop, watchApp, watchEnd, watchFace] =
+  ['timer', 'timer-dark', 'history', 'history-dark', 'phase', 'phase-dark', 'stats', 'stats-dark', 'notifications', 'notifications-dark', 'night', 'fullphase', 'pop', 'watch-app', 'watch-end', 'watch-face'].map(shot);
 
 const base = import.meta.env.BASE_URL;
 const absolute = (path: string) => new URL(path, Astro.site).href;
@@ -226,7 +226,7 @@ const watchSizes = 'min(245px, 36vw)';
         <div class="watches">
           <Shot class="watch" src={watchFace} widths={[160, 320, 490]} sizes={watchSizes} loading="lazy" alt={t.watch.face} />
           <Shot class="watch" src={watchApp} widths={[200, 400, 490]} sizes={watchSizes} loading="lazy" alt={t.watch.app} />
-          <Shot class="watch" src={watchNotification} widths={[160, 320, 490]} sizes={watchSizes} loading="lazy" alt={t.watch.notification} />
+          <Shot class="watch" src={watchEnd} widths={[160, 320, 490]} sizes={watchSizes} loading="lazy" alt={t.watch.end} />
         </div>
       </div>
     </section>

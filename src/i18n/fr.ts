@@ -56,7 +56,7 @@ export default {
     title: 'À votre poignet.',
     text: 'Sur l’Apple Watch, Faster affiche votre jeûne d’un coup d’œil, phase par phase. Commencez, terminez ou programmez un jeûne et modifiez votre objectif depuis votre poignet. Tout reste synchronisé avec votre iPhone, même quand vous ne l’avez pas sur vous.',
     app: 'Faster sur l’Apple Watch : un jeûne à 14 heures dans la phase brûle-graisses, avec ses heures de début et d’objectif et le bouton Terminer le jeûne.',
-    notification: 'La notification Jeûne terminé sur l’Apple Watch, avec une jauge à 16 heures et des boutons pour terminer le jeûne ou ajouter une heure.',
+    end: 'Terminer un jeûne sur l’Apple Watch : sa durée face à l’objectif de 16 heures, avec le bouton Terminer le jeûne.',
     face: 'Un cadran avec les complications anneau et barre de Faster, toutes deux dans la phase brûle-graisses à 14 heures.',
     hero: 'Faster sur l’Apple Watch avec le même jeûne.',
   },

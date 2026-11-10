@@ -55,7 +55,7 @@ export default {
     title: 'No seu pulso.',
     text: 'No Apple Watch, o Faster mostra seu jejum num relance, fase por fase. Comece, encerre ou agende um jejum e mude sua meta pelo pulso. Tudo fica sincronizado com o seu iPhone, mesmo quando ele não está por perto.',
     app: 'Faster no Apple Watch: um jejum de 14 horas na fase de queima de gordura, com horário de início, meta e o botão Encerrar jejum.',
-    notification: 'A notificação Jejum concluído no Apple Watch, com um indicador em 16 horas e botões para encerrar o jejum ou somar uma hora.',
+    end: 'Encerrar um jejum no Apple Watch: a duração em relação à meta de 16 horas, com o botão Encerrar jejum.',
     face: 'Um mostrador com as complicações de anel e barra do Faster, ambas na fase de queima de gordura com 14 horas.',
     hero: 'Faster no Apple Watch com o mesmo jejum.',
   },

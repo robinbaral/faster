@@ -130,12 +130,12 @@ p { margin: 0; }
 .trio .phone { width: min(210px, 30vw); }
 .watch { filter: drop-shadow(0 24px 32px rgba(0, 0, 0, 0.22)); }
 /* The app in front, the face and ending a fast either side, like the themes' phones. */
-.watches { display: flex; align-items: center; }
-.watches .watch { width: min(200px, 29vw); }
-.watches > :nth-child(2) > .watch { width: min(245px, 36vw); margin: 0 -34px; position: relative; z-index: 1; }
-/* The three run a little wider than their column. On the left they hang into the page's margin
-   rather than over the text beside them. */
-@media (min-width: 861px) { .feature.flip .feature-media:has(.watches) { justify-content: flex-end; } }/* Each image sits in a <picture>, so the middle one is found through it. */
+/* Sized as shares of the row, which fills the column up to the watches' full size, so the
+   three always fit beside the text: 34% + 42% + 34%, less 5% overlap either side. */
+.watches { display: flex; align-items: center; width: min(577px, 100%); }
+.watches .watch { flex: 0 0 34%; min-width: 0; }
+.watches > :nth-child(2) > .watch { flex-basis: 42%; margin: 0 -5%; position: relative; z-index: 1; }
+/* Each image sits in a <picture>, so the middle one is found through it. */
 .trio > :nth-child(2) > .phone { margin: 0 -48px 46px; z-index: 1; position: relative; }
 .chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
 .chip { background: var(--surface); border-radius: 999px; padding: 8px 15px; font-size: 15px; font-weight: 600; font-variant-numeric: tabular-nums; }

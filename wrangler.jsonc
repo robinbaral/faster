@@ -1,0 +1,10 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "faster",
+  "compatibility_date": "2026-11-11",
+  // A static site: Cloudflare serves the Astro build as it is, with no Worker code.
+  // Build it with `npm run build:cloudflare` first; plain `npm run build` is for GitHub Pages.
+  "assets": {
+    "directory": "./dist"
+  }
+}

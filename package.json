@@ -5,9 +5,13 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "build:cloudflare": "SITE_URL=https://faster.robinbaral.workers.dev BASE_PATH=/ NOINDEX=1 astro build"
   },
   "dependencies": {
     "astro": "^7.4.4"
+  },
+  "devDependencies": {
+    "wrangler": "^4.160.0"
   }
 }

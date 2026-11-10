@@ -12,6 +12,8 @@ interface Props {
 }
 const { title, description, lang = 'en', alternates = [] } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
+// Set for a copy of the site that shouldn't be in search results alongside the main one.
+const noindex = process.env.NOINDEX === '1';
 ---
 <!doctype html>
 <html lang={lang}>
@@ -20,6 +22,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title}</title>
 <meta name="description" content={description}>
+{noindex && <meta name="robots" content="noindex">}
 <link rel="canonical" href={canonical}>
 {alternates.map((a) => <link rel="alternate" hreflang={a.hreflang} href={a.href}>)}
 {alternates[0] && <link rel="alternate" hreflang="x-default" href={alternates[0].href}>}

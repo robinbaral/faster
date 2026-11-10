@@ -23,6 +23,11 @@ export default {
     custom: 'Sur mesure, jusqu’à 72 h',
     alt: 'L’historique de Faster présente les jeûnes de cette semaine et de la semaine dernière, avec leurs horaires, leur durée et l’indication de l’objectif atteint ou non.',
   },
+  schedule: {
+    title: 'Un objectif pour chaque jour de la semaine.',
+    text: 'Jeûnez plus longtemps certains jours, plus légèrement d’autres. Avec le planning, chaque jour de la semaine a son propre objectif, ou aucun, et chaque jeûne prend l’objectif du jour où il se termine. Envie de faire autrement aujourd’hui ? Changez l’objectif pour ce seul jeûne.',
+    alt: 'Le planning de Faster : un objectif pour chaque jour de la semaine, avec le mercredi réglé sur 18:6, un jeûne plus long.',
+  },
   phases: {
     title: 'Découvrez ce qui se passe dans votre corps.',
     text: 'Selon sa durée, votre jeûne peut traverser jusqu’à cinq phases : digestion, stabilisation, brûle-graisses, cétose et jeûne profond. Touchez une phase pour en savoir plus.',
@@ -65,7 +70,7 @@ export default {
     title: 'Questions sur le jeûne intermittent avec Faster',
     items: [
       { q: 'Quelle est la meilleure app pour suivre le jeûne intermittent sur iPhone ?', a: 'Faster est une app simple pour suivre le jeûne intermittent sur iPhone. Lancez un jeûne d’un geste, suivez chaque phase et consultez votre progression grâce aux widgets de l’écran verrouillé et de l’écran d’accueil. L’app est gratuite, sans compte et sans publicité.' },
-      { q: 'Quels rythmes de jeûne Faster propose-t-il ?', a: 'Faster propose des objectifs prédéfinis pour 12:12, 14:10, 16:8, 18:6, 20:4 et un repas par jour (OMAD, 23:1). Vous pouvez aussi définir un objectif personnalisé de 8 à 72 heures, y compris des jeûnes de 24 heures ou plus.' },
+      { q: 'Quels rythmes de jeûne Faster propose-t-il ?', a: 'Faster propose des objectifs prédéfinis pour 12:12, 14:10, 16:8, 18:6, 20:4 et un repas par jour (OMAD, 23:1). Vous pouvez aussi définir un objectif personnalisé de 8 à 72 heures, y compris des jeûnes de 24 heures ou plus. Avec le planning, vous pouvez aussi fixer un objectif différent pour chaque jour de la semaine.' },
       { q: 'Quelles sont les phases d’un jeûne ?', a: 'Faster distingue cinq phases : digestion, stabilisation, brûle-graisses, cétose et jeûne profond. Le cadran indique la phase en cours. Touchez une phase pour découvrir ce qui se passe dans votre corps. Les durées sont indicatives et varient d’une personne à l’autre.' },
       { q: 'Quand commence la combustion des graisses pendant un jeûne ?', a: 'Chez beaucoup de personnes, le corps puise davantage dans les graisses stockées après environ 12 heures sans manger, une fois la majeure partie du glycogène utilisée. Faster l’indique sur son cadran comme la phase brûle-graisses. C’est un repère approximatif, pas une mesure médicale.' },
       { q: 'Faster est-il gratuit ?', a: 'Oui, Faster est gratuit. Un achat unique facultatif débloque quatre thèmes supplémentaires avec des icônes d’app et des widgets assortis. Cet achat m’aide aussi à continuer d’améliorer l’app.' },
@@ -90,6 +95,7 @@ export default {
     features: [
       'Minuteur de jeûne en cinq phases : digestion, stabilisation, brûle-graisses, cétose et jeûne profond',
       'Objectifs 12:12, 14:10, 16:8, 18:6, 20:4, un repas par jour et jeûnes sur mesure jusqu’à 72 heures',
+      'Planning avec un objectif différent pour chaque jour',
       'Widgets pour l’écran verrouillé et l’écran d’accueil',
       'Statistiques, séries, tendances et constats en mots simples',
       'Historique des jeûnes modifiable, trié par date, durée ou objectif',

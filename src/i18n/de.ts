@@ -22,6 +22,11 @@ export default {
     custom: 'Eigenes Ziel, bis 72 h',
     alt: 'Der Verlauf in Faster zeigt Fastenzeiten aus dieser und der letzten Woche, jeweils mit Start- und Endzeit, Dauer und Zielerreichung.',
   },
+  schedule: {
+    title: 'Für jeden Tag das passende Ziel.',
+    text: 'An manchen Tagen länger fasten, an anderen kürzer: Mit dem Zielplan bekommt jeder Wochentag sein eigenes Ziel oder auch gar keins. Jedes Fasten übernimmt das Ziel des Tages, an dem es endet. Heute soll es anders sein? Dann änderst du das Ziel nur für dieses eine Fasten.',
+    alt: 'Der Zielplan in Faster: ein Ziel für jeden Wochentag, für Mittwoch ist 18:6 gewählt, ein längeres Fasten.',
+  },
   phases: {
     title: 'Sieh, was in dir passiert.',
     text: 'Je nach Dauer durchläufst du beim Fasten bis zu fünf Phasen: Verdauung, Ausgleich, Fettverbrennung, Ketose und tiefes Fasten. Tippe auf eine Phase und erfahre, was dabei in deinem Körper passiert.',
@@ -64,7 +69,7 @@ export default {
     title: 'Fragen zum Intervallfasten mit Faster',
     items: [
       { q: 'Was ist die beste App für Intervallfasten auf dem iPhone?', a: 'Faster ist eine einfache App, mit der du dein Intervallfasten auf dem iPhone verfolgen kannst. Starte dein Fasten mit einem Tipp und verfolge die einzelnen Phasen. Mit den Widgets für den Sperrbildschirm und den Home-Bildschirm behältst du deinen Fortschritt im Blick. Die App ist kostenlos, ohne Konto und ohne Werbung.' },
-      { q: 'Welche Fastenrhythmen unterstützt Faster?', a: 'Faster bietet voreingestellte Ziele für 12:12, 14:10, 16:8, 18:6, 20:4 und eine Mahlzeit am Tag (OMAD, 23:1). Du kannst auch ein eigenes Ziel zwischen 8 und 72 Stunden festlegen, einschließlich Fastenzeiten von 24 Stunden oder länger.' },
+      { q: 'Welche Fastenrhythmen unterstützt Faster?', a: 'Faster bietet voreingestellte Ziele für 12:12, 14:10, 16:8, 18:6, 20:4 und eine Mahlzeit am Tag (OMAD, 23:1). Du kannst auch ein eigenes Ziel zwischen 8 und 72 Stunden festlegen, einschließlich Fastenzeiten von 24 Stunden oder länger. Mit dem Zielplan kannst du außerdem jedem Wochentag ein eigenes Ziel geben.' },
       { q: 'Welche Phasen gibt es beim Fasten?', a: 'Faster zeigt fünf Phasen: Verdauung, Ausgleich, Fettverbrennung, Ketose und tiefes Fasten. Auf der Anzeige siehst du, in welcher Phase du gerade bist. Tippe auf eine Phase und erfahre, was dabei in deinem Körper passiert. Die Zeitangaben dienen zur Orientierung und können von Person zu Person variieren.' },
       { q: 'Wann beginnt beim Fasten die Fettverbrennung?', a: 'Bei vielen Menschen greift der Körper nach etwa 12 Stunden ohne Essen stärker auf gespeichertes Fett zurück, wenn der Großteil des Glykogens aufgebraucht ist. Faster markiert das auf der Anzeige als Phase Fettverbrennung. Das ist ein grober Richtwert, keine medizinische Messung.' },
       { q: 'Ist Faster kostenlos?', a: 'Ja, Faster ist kostenlos nutzbar. Mit einem optionalen Einmalkauf kannst du vier weitere Themes mit passenden App-Symbolen und Widgets freischalten. Damit unterstützt du auch die Weiterentwicklung der App.' },
@@ -89,6 +94,7 @@ export default {
     features: [
       'Fasten-Timer mit fünf Phasen: Verdauung, Ausgleich, Fettverbrennung, Ketose und tiefes Fasten',
       'Ziele für 12:12, 14:10, 16:8, 18:6, 20:4, eine Mahlzeit am Tag und eigene Fastenzeiten bis 72 Stunden',
+      'Zielplan mit einem eigenen Ziel für jeden Wochentag',
       'Widgets für Sperrbildschirm und Home-Bildschirm',
       'Statistik, Serien, Trends und Einblicke in einfachen Worten',
       'Bearbeitbarer Fastenverlauf, sortiert nach Datum, Dauer oder Ziel',

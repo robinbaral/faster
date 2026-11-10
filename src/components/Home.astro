@@ -26,8 +26,8 @@ const here = locale(lang);
 
 const images = import.meta.glob<{ default: ImageMetadata }>('../assets/**/*.png', { eager: true });
 const shot = (name: string) => (images[`../assets/${lang}/${name}.png`] ?? images[`../assets/${name}.png`]).default;
-const [timer, timerDark, history, historyDark, phase, phaseDark, stats, statsDark, notifications, notificationsDark, night, fullphase, pop] =
-  ['timer', 'timer-dark', 'history', 'history-dark', 'phase', 'phase-dark', 'stats', 'stats-dark', 'notifications', 'notifications-dark', 'night', 'fullphase', 'pop'].map(shot);
+const [timer, timerDark, history, historyDark, schedule, scheduleDark, phase, phaseDark, stats, statsDark, notifications, notificationsDark, night, fullphase, pop] =
+  ['timer', 'timer-dark', 'history', 'history-dark', 'schedule', 'schedule-dark', 'phase', 'phase-dark', 'stats', 'stats-dark', 'notifications', 'notifications-dark', 'night', 'fullphase', 'pop'].map(shot);
 
 const base = import.meta.env.BASE_URL;
 const absolute = (path: string) => new URL(path, Astro.site).href;
@@ -161,13 +161,21 @@ const tileSizes = 'clamp(39px, 7.06vw, 95px)';
 
     <section class="feature flip">
       <div class="feature-text">
+        <h2>{t.schedule.title}</h2>
+        <p>{t.schedule.text}</p>
+      </div>
+      <div class="feature-media"><Shot class="phone" src={schedule} dark={scheduleDark} widths={[300, 620]} sizes={phoneSizes} loading="lazy" alt={t.schedule.alt} /></div>
+    </section>
+
+    <section class="feature">
+      <div class="feature-text">
         <h2>{t.phases.title}</h2>
         <p>{t.phases.text}</p>
       </div>
       <div class="feature-media"><Shot class="phone" src={phase} dark={phaseDark} widths={[300, 620]} sizes={phoneSizes} loading="lazy" alt={t.phases.alt} /></div>
     </section>
 
-    <section class="feature">
+    <section class="feature flip">
       <div class="feature-text">
         <h2>{t.themes.title}</h2>
         <p>{t.themes.text}</p>
@@ -181,7 +189,7 @@ const tileSizes = 'clamp(39px, 7.06vw, 95px)';
       </div>
     </section>
 
-    <section class="feature flip">
+    <section class="feature">
       <div class="feature-text">
         <h2>{t.widgets.title}</h2>
         <p>{t.widgets.text}</p>
@@ -197,7 +205,7 @@ const tileSizes = 'clamp(39px, 7.06vw, 95px)';
       </div>
     </section>
 
-    <section class="feature">
+    <section class="feature flip">
       <div class="feature-text">
         <h2>{t.stats.title}</h2>
         <p>{t.stats.text}</p>
@@ -205,7 +213,7 @@ const tileSizes = 'clamp(39px, 7.06vw, 95px)';
       <div class="feature-media"><Shot class="phone" src={stats} dark={statsDark} widths={[300, 620]} sizes={phoneSizes} loading="lazy" alt={t.stats.alt} /></div>
     </section>
 
-    <section class="feature flip">
+    <section class="feature">
       <div class="feature-text">
         <h2>{t.notifications.title}</h2>
         <p>{t.notifications.text}</p>

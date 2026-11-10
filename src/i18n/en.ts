@@ -25,6 +25,11 @@ export default {
     custom: 'Custom, up to 72h',
     alt: "Faster's history, grouped into this week and last week: each fast with its times, duration and whether it reached its goal.",
   },
+  schedule: {
+    title: 'A goal for every day of the week.',
+    text: "Fast longer on some days and go easier on others. With Goal Schedule, each day of the week gets its own goal, or none at all, and each fast takes the goal of the day it ends on. Want something different today? Change the goal for just that fast.",
+    alt: "Faster's Goal Schedule: a goal for each day of the week, with Wednesday set to 18:6, a longer fast.",
+  },
   phases: {
     title: "See what's going on inside.",
     text: "Depending on its length, your fast moves through up to five phases: digesting, settling, fat burning, ketosis and deep fast. Tap any phase to find out what's happening in your body.",
@@ -69,7 +74,7 @@ export default {
     // Answers are HTML.
     items: [
       { q: 'What is the best app to track intermittent fasting on iPhone?', a: "Faster is a simple intermittent fasting tracker for iPhone. Start a fast with one tap, follow each fasting phase and check your progress with Lock Screen and Home Screen widgets. It's free to use, with no account and no ads." },
-      { q: 'Which fasting schedules does Faster support?', a: 'Faster includes preset goals for 12:12, 14:10, 16:8, 18:6, 20:4 and one meal a day (OMAD, 23:1). You can also set a custom goal from 8 to 72 hours, including fasts of 24 hours or longer.' },
+      { q: 'Which fasting schedules does Faster support?', a: 'Faster includes preset goals for 12:12, 14:10, 16:8, 18:6, 20:4 and one meal a day (OMAD, 23:1). You can also set a custom goal from 8 to 72 hours, including fasts of 24 hours or longer. With Goal Schedule, you can also give each day of the week its own goal.' },
       { q: 'What are the phases of a fast?', a: "Faster follows five phases: digesting, settling, fat burning, ketosis and deep fast. The dial shows which one you're in, and you can tap any phase to read what's happening in your body. Timings are a general guide and vary from person to person." },
       { q: 'When does fat burning start during a fast?', a: 'For many people, the body leans more on stored fat after roughly 12 hours without food, once most glycogen has been used. Faster marks this as the fat burning phase on its dial. It\'s a rough guide, not a medical measurement.' },
       { q: 'Is Faster free?', a: 'Yes, Faster is free to use. An optional one-time purchase unlocks four additional themes with matching app icons and widgets. It also helps me keep improving the app.' },
@@ -95,6 +100,7 @@ export default {
     features: [
       'Fasting timer with five phases: digesting, settling, fat burning, ketosis and deep fast',
       'Goals for 12:12, 14:10, 16:8, 18:6, 20:4, one meal a day and custom fasts up to 72 hours',
+      'Goal Schedule, with its own goal for each day of the week',
       'Lock Screen and Home Screen widgets',
       'Stats, streaks, trends and plain-language insights',
       'Editable fasting history, sorted by date, length or goal',

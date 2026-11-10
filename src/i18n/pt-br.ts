@@ -22,6 +22,11 @@ export default {
     custom: 'Personalizada, até 72 h',
     alt: 'O histórico do Faster mostra os jejuns desta semana e da semana passada, com horários, duração e indicação de meta atingida ou não.',
   },
+  schedule: {
+    title: 'Uma meta para cada dia da semana.',
+    text: 'Jejue mais em alguns dias e pegue mais leve em outros. Com a agenda de metas, cada dia da semana tem a sua própria meta, ou nenhuma, e cada jejum fica com a meta do dia em que termina. Hoje vai ser diferente? Mude a meta só para esse jejum.',
+    alt: 'A agenda de metas do Faster: uma meta para cada dia da semana, com a quarta-feira em 18:6, um jejum mais longo.',
+  },
   phases: {
     title: 'Veja o que acontece no seu corpo.',
     text: 'Dependendo da duração, seu jejum passa por até cinco fases: digestão, estabilização, queima de gordura, cetose e jejum profundo. Toque em qualquer fase para entender o que acontece no seu corpo.',
@@ -64,7 +69,7 @@ export default {
     title: 'Perguntas sobre jejum intermitente com o Faster',
     items: [
       { q: 'Qual é o melhor app para acompanhar o jejum intermitente no iPhone?', a: 'O Faster é um app simples para acompanhar o jejum intermitente no iPhone. Comece um jejum com um toque, acompanhe cada fase e confira seu progresso pelos widgets na Tela Bloqueada e na Tela de Início. É grátis, não exige conta e não tem anúncios.' },
-      { q: 'Quais protocolos de jejum o Faster oferece?', a: 'O Faster inclui metas predefinidas para 12:12, 14:10, 16:8, 18:6, 20:4 e uma refeição por dia (OMAD, 23:1). Você também pode definir uma meta personalizada de 8 a 72 horas, incluindo jejuns de 24 horas ou mais.' },
+      { q: 'Quais protocolos de jejum o Faster oferece?', a: 'O Faster inclui metas predefinidas para 12:12, 14:10, 16:8, 18:6, 20:4 e uma refeição por dia (OMAD, 23:1). Você também pode definir uma meta personalizada de 8 a 72 horas, incluindo jejuns de 24 horas ou mais. Com a agenda de metas, você também pode definir uma meta diferente para cada dia da semana.' },
       { q: 'Quais são as fases do jejum?', a: 'O Faster acompanha cinco fases: digestão, estabilização, queima de gordura, cetose e jejum profundo. O mostrador indica em qual você está, e você pode tocar em cada fase para ler o que acontece no seu corpo. Os tempos são uma referência geral e variam de pessoa para pessoa.' },
       { q: 'Quando começa a queima de gordura no jejum?', a: 'Para muitas pessoas, o corpo passa a usar mais gordura armazenada depois de cerca de 12 horas sem comer, quando a maior parte do glicogênio já foi gasta. O Faster marca isso no mostrador como a fase de queima de gordura. É uma referência aproximada, não uma medida médica.' },
       { q: 'O Faster é grátis?', a: 'Sim, o Faster é grátis. Uma compra única opcional libera mais quatro temas com ícones do app e widgets combinando. Ela também me ajuda a continuar melhorando o app.' },
@@ -89,6 +94,7 @@ export default {
     features: [
       'Timer de jejum com cinco fases: digestão, estabilização, queima de gordura, cetose e jejum profundo',
       'Metas de 12:12, 14:10, 16:8, 18:6, 20:4, uma refeição por dia e jejuns personalizados de até 72 horas',
+      'Agenda de metas com uma meta diferente para cada dia',
       'Widgets para a Tela Bloqueada e a Tela de Início',
       'Estatísticas, sequências, tendências e destaques em palavras simples',
       'Histórico de jejuns editável, ordenado por data, duração ou meta',

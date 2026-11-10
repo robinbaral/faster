@@ -22,6 +22,11 @@ export default {
     custom: 'A tu medida, hasta 72 h',
     alt: 'El historial de Faster muestra los ayunos de esta semana y la semana pasada, con sus horas de inicio y fin, su duración y si se alcanzó el objetivo.',
   },
+  schedule: {
+    title: 'Un objetivo para cada día de la semana.',
+    text: 'Ayuna más algunos días y menos otros. Con el plan semanal, cada día de la semana tiene su propio objetivo, o ninguno, y cada ayuno toma el objetivo del día en que termina. ¿Hoy quieres algo distinto? Cambia el objetivo solo para ese ayuno.',
+    alt: 'El plan semanal de Faster: un objetivo para cada día de la semana, con el miércoles en 18:6, un ayuno más largo.',
+  },
   phases: {
     title: 'Mira lo que pasa en tu cuerpo.',
     text: 'Según su duración, tu ayuno pasa por hasta cinco fases: digestión, estabilización, quema de grasa, cetosis y ayuno profundo. Toca cualquier fase para saber qué ocurre en tu cuerpo.',
@@ -64,7 +69,7 @@ export default {
     title: 'Preguntas sobre el ayuno intermitente con Faster',
     items: [
       { q: '¿Cuál es la mejor app para seguir el ayuno intermitente en iPhone?', a: 'Faster es una app sencilla para seguir el ayuno intermitente en iPhone. Inicia un ayuno con un toque, sigue cada fase y consulta tu progreso con los widgets de la pantalla bloqueada y de inicio. Es gratis, no requiere una cuenta y no tiene anuncios.' },
-      { q: '¿Qué tipos de ayuno admite Faster?', a: 'Faster incluye objetivos predefinidos para 12:12, 14:10, 16:8, 18:6, 20:4 y una comida al día (OMAD, 23:1). También puedes establecer un objetivo personalizado de entre 8 y 72 horas, incluidos ayunos de 24 horas o más.' },
+      { q: '¿Qué tipos de ayuno admite Faster?', a: 'Faster incluye objetivos predefinidos para 12:12, 14:10, 16:8, 18:6, 20:4 y una comida al día (OMAD, 23:1). También puedes establecer un objetivo personalizado de entre 8 y 72 horas, incluidos ayunos de 24 horas o más. Con el plan semanal, también puedes poner un objetivo distinto para cada día de la semana.' },
       { q: '¿Cuáles son las fases del ayuno?', a: 'Faster sigue cinco fases: digestión, estabilización, quema de grasa, cetosis y ayuno profundo. El dial muestra en cuál estás y puedes tocar cualquier fase para leer qué pasa en tu cuerpo. Los tiempos son orientativos y varían según la persona.' },
       { q: '¿Cuándo empieza la quema de grasa durante el ayuno?', a: 'En muchas personas, el cuerpo recurre más a la grasa almacenada tras unas 12 horas sin comer, cuando ya ha gastado la mayor parte del glucógeno. Faster lo marca en su dial como la fase de quema de grasa. Es una referencia aproximada, no una medición médica.' },
       { q: '¿Faster es gratis?', a: 'Sí, Faster es gratis. Una compra única opcional desbloquea cuatro temas adicionales con iconos y widgets a juego. También me ayuda a seguir mejorando la app.' },
@@ -89,6 +94,7 @@ export default {
     features: [
       'Temporizador de ayuno con cinco fases: digestión, estabilización, quema de grasa, cetosis y ayuno profundo',
       'Objetivos de 12:12, 14:10, 16:8, 18:6, 20:4, una comida al día y ayunos a tu medida de hasta 72 horas',
+      'Plan semanal con un objetivo distinto para cada día',
       'Widgets para la pantalla bloqueada y la de inicio',
       'Estadísticas, rachas, evolución y tendencias explicadas con palabras sencillas',
       'Historial de ayunos editable, ordenado por fecha, duración u objetivo',

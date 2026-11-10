@@ -178,7 +178,6 @@ p { margin: 0; }
 .fan .l2, .fan .r2 { --w: clamp(110px, 15vw, 190px); --top: 26%; z-index: 1; }
 .fan .l2 { --x: -203%; }
 .fan .r2 { --x: 103%; }
-.fan .w { --w: clamp(84px, 11vw, 140px); --x: 58%; --top: 66%; z-index: 4; }
 @media (max-width: 640px) { .fan .l2, .fan .r2 { display: none; } }
 
 /* Footer */

@@ -1,8 +1,8 @@
 import type { Strings } from './index';
 
 export default {
-  title: 'Faster: Intervallfasten-Timer für das iPhone',
-  description: 'Faster ist ein einfacher, privater Timer für Intervallfasten auf dem iPhone. Verfolge dein Fasten durch Verdauung, Fettverbrennung und Ketose, mit Widgets, Einblicken und ohne Konto. Für 16:8, 18:6, 20:4 und OMAD.',
+  title: 'Faster: Intervallfasten-Timer für iPhone und Apple Watch',
+  description: 'Faster ist ein einfacher, privater Timer für Intervallfasten auf iPhone und Apple Watch. Verfolge dein Fasten durch Verdauung, Fettverbrennung und Ketose, mit Widgets, Einblicken und ohne Konto. Für 16:8, 18:6, 20:4 und OMAD.',
   social: 'Verfolge dein Fasten Phase für Phase, von der Verdauung bis zur Fettverbrennung und Ketose. Einfach, privat, ohne Konto.',
   nav: { features: 'Funktionen', privacy: 'Datenschutz', faq: 'FAQ' },
   store: 'Faster im App Store laden',
@@ -35,8 +35,8 @@ export default {
     pop: 'Faster im Theme Pop: flache, verspielte Farbflächen.',
   },
   widgets: {
-    title: 'Auf deinem Sperrbildschirm und Home-Bildschirm.',
-    text: 'Mit den Widgets behältst du dein Fasten im Blick, ohne die App zu öffnen. Zwischen den Fastenzeiten zeigen sie dir, wie viel von deinem Essensfenster noch übrig ist.',
+    title: 'Auf Sperrbildschirm, Home-Bildschirm und Zifferblatt.',
+    text: 'Mit den Widgets behältst du dein Fasten im Blick, ohne die App zu öffnen. Zwischen den Fastenzeiten zeigen sie dir, wie viel von deinem Essensfenster noch übrig ist. Auf der Apple Watch zeigen Komplikationen dein Fasten direkt auf dem Zifferblatt.',
     home: 'Ein iPhone-Home-Bildschirm mit Widgets von Faster in verschiedenen Themes.',
     lock: 'Die Widgets von Faster auf dem Sperrbildschirm, vergrößert: die Phase Fettverbrennung mit Timer und Ziel und ein Ring bei 14 Stunden.',
   },
@@ -47,12 +47,21 @@ export default {
   },
   notifications: {
     title: 'Erinnerungen nach deinem Geschmack.',
-    text: 'Wähle, wann Faster dich benachrichtigt: beim Erreichen deines Ziels, nach der Hälfte der Fastenzeit, eine Stunde vor dem Ziel oder beim Beginn einer neuen Phase. Jede Mitteilung kannst du einzeln ein- oder ausschalten.',
+    text: 'Wähle, wann Faster dich benachrichtigt: beim Erreichen deines Ziels, nach der Hälfte der Fastenzeit, eine Stunde vor dem Ziel oder beim Beginn einer neuen Phase. Jede Mitteilung kannst du einzeln ein- oder ausschalten. Auf der Apple Watch kannst du dein Fasten direkt in der Mitteilung beenden oder um eine Stunde verlängern.',
     alt: 'Die Mitteilungseinstellungen in Faster: Hinweise rund ums Essensfenster und während des Fastens, etwa neue Phase, Halbzeit und Ziel erreicht, jeweils ein- oder ausgeschaltet.',
   },
 
+  watch: {
+    title: 'Am Handgelenk.',
+    text: 'Faster auf der Apple Watch zeigt dir dein Fasten auf einen Blick, Phase für Phase. Starte, beende oder plane ein Fasten und ändere dein Ziel direkt am Handgelenk. Alles bleibt mit deinem iPhone abgeglichen, auch wenn du es gerade nicht dabeihast.',
+    app: 'Faster auf der Apple Watch: ein Fasten bei 14 Stunden in der Phase Fettverbrennung, mit Start- und Zielzeit und der Taste „Fasten beenden“.',
+    notification: 'Die Mitteilung „Fasten geschafft“ auf der Apple Watch, mit einer Anzeige bei 16 Stunden und Tasten zum Beenden oder für eine Stunde mehr.',
+    face: 'Ein Zifferblatt mit den Komplikationen Ring und Balken von Faster, beide in der Phase Fettverbrennung bei 14 Stunden.',
+    hero: 'Faster auf der Apple Watch mit demselben Fasten.',
+  },
+
   privacy: {
-    title: 'Dein Fasten bleibt auf deinem iPhone.',
+    title: 'Dein Fasten bleibt auf deinen Geräten.',
     points: [
       { title: 'Kein Konto', text: 'Öffne die App und starte dein Fasten. Du musst dich nicht registrieren.' },
       { title: 'Keine Werbung', text: 'Faster zeigt keine Werbung und enthält keinen Code von Werbenetzwerken.' },
@@ -69,7 +78,8 @@ export default {
       { q: 'Wann beginnt beim Fasten die Fettverbrennung?', a: 'Bei vielen Menschen greift der Körper nach etwa 12 Stunden ohne Essen stärker auf gespeichertes Fett zurück, wenn der Großteil des Glykogens aufgebraucht ist. Faster markiert das auf der Anzeige als Phase Fettverbrennung. Das ist ein grober Richtwert, keine medizinische Messung.' },
       { q: 'Ist Faster kostenlos?', a: 'Ja, Faster ist kostenlos nutzbar. Mit einem optionalen Einmalkauf kannst du vier weitere Themes mit passenden App-Symbolen und Widgets freischalten. Damit unterstützt du auch die Weiterentwicklung der App.' },
       { q: 'Hat Faster Widgets?', a: 'Ja. Faster bietet Widgets für den Sperrbildschirm und den Home-Bildschirm. Mit den Widgets behältst du dein Fasten im Blick, ohne die App zu öffnen. Zwischen den Fastenzeiten zeigen sie dir, wie viel von deinem Essensfenster noch übrig ist.' },
-      { q: 'Braucht Faster ein Konto oder sammelt es meine Daten?', a: 'Nein. Du brauchst kein Konto, und es gibt keine Nutzungsanalyse und kein Tracking. Deine Fastenzeiten werden nur auf deinem iPhone gespeichert und nie an mich gesendet. Mehr dazu findest du in der <a href="{privacy}" hreflang="en">Datenschutzerklärung</a> (auf Englisch).', ld: 'Nein. Du brauchst kein Konto, und es gibt keine Nutzungsanalyse und kein Tracking. Deine Fastenzeiten werden nur auf deinem iPhone gespeichert und nie an den Entwickler gesendet.' },
+      { q: 'Gibt es Faster für die Apple Watch?', a: 'Ja. Die App für die Apple Watch zeigt dein Fasten mit seinen Phasen. Du kannst ein Fasten starten, beenden oder planen und dein Ziel ändern. Komplikationen bringen dein Fasten aufs Zifferblatt, und Mitteilungen haben Tasten, um ein Fasten zu beenden oder um eine Stunde zu verlängern. Alles bleibt mit deinem iPhone abgeglichen.' },
+      { q: 'Braucht Faster ein Konto oder sammelt es meine Daten?', a: 'Nein. Du brauchst kein Konto, und es gibt keine Nutzungsanalyse und kein Tracking. Deine Fastenzeiten werden nur auf deinem iPhone und deiner Apple Watch gespeichert und nie an mich gesendet. Mehr dazu findest du in der <a href="{privacy}" hreflang="en">Datenschutzerklärung</a> (auf Englisch).', ld: 'Nein. Du brauchst kein Konto, und es gibt keine Nutzungsanalyse und kein Tracking. Deine Fastenzeiten werden nur auf deinem iPhone und deiner Apple Watch gespeichert und nie an den Entwickler gesendet.' },
       { q: 'Kann ich ein Fasten korrigieren, wenn ich den Start oder das Ende vergessen habe?', a: 'Ja. Du kannst die Startzeit während des Fastens ändern und beim Beenden sowohl die Startzeit als auch die Endzeit anpassen. Frühere Fastenzeiten kannst du im Verlauf bearbeiten oder löschen. Faster kann dich auch daran erinnern, dein Fasten zu beenden, falls du es vergisst.' },
       { q: 'In welchen Sprachen gibt es Faster?', a: 'Faster gibt es auf Deutsch, Englisch, Spanisch, Französisch, brasilianischem Portugiesisch und Japanisch.' },
       { q: 'Wer entwickelt Faster?', a: 'Ich bin Robin und entwickle Faster allein. Wenn dir die App gefällt, kannst du meine Arbeit mit dem optionalen Theme-Kauf unterstützen. Hast du Fragen oder Ideen? Schreib mir an <a href="mailto:fasterfastingapp@proton.me">fasterfastingapp@proton.me</a>.', ld: 'Faster wird von Robin entwickelt, einem unabhängigen Entwickler. Fragen und Ideen sind willkommen an fasterfastingapp@proton.me.' },
@@ -79,7 +89,7 @@ export default {
 
   final: { title: 'Bereit für dein nächstes Fasten?', text: 'Kostenlos herunterladen und mit einem Tipp starten.' },
 
-  footer: { tagline: 'Ein einfacher Timer fürs Intervallfasten auf dem iPhone, der deine Privatsphäre schützt.', support: 'Support', privacy: 'Datenschutz', home: 'Startseite', credit: 'Website von', languages: 'Sprachen' },
+  footer: { tagline: 'Ein einfacher Timer fürs Intervallfasten auf iPhone und Apple Watch, der deine Privatsphäre schützt.', support: 'Support', privacy: 'Datenschutz', home: 'Startseite', credit: 'Website von', languages: 'Sprachen' },
 
   banner: { text: 'Faster gibt es auch auf Deutsch.', link: 'Auf Deutsch lesen', close: 'Schließen' },
 
@@ -90,6 +100,7 @@ export default {
       'Fasten-Timer mit fünf Phasen: Verdauung, Ausgleich, Fettverbrennung, Ketose und tiefes Fasten',
       'Ziele für 12:12, 14:10, 16:8, 18:6, 20:4, eine Mahlzeit am Tag und eigene Fastenzeiten bis 72 Stunden',
       'Widgets für Sperrbildschirm und Home-Bildschirm',
+      'Apple-Watch-App mit Komplikationen und Mitteilungen mit Aktionen',
       'Statistik, Serien, Trends und Einblicke in einfachen Worten',
       'Bearbeitbarer Fastenverlauf, sortiert nach Datum, Dauer oder Ziel',
       'Erinnerungen für das Essensfenster, jede Phase und das Ziel',

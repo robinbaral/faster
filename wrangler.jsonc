@@ -1,6 +1,8 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "faster",
+  // Robin's personal Cloudflare account, not RFG (FG work).
+  "account_id": "02160e7ee5cca4e6b463bab8ac43d6ca",
   "compatibility_date": "2026-11-11",
   // A static site: Cloudflare serves the Astro build as it is, with no Worker code.
   // Build it with `npm run build:cloudflare` first; plain `npm run build` is for GitHub Pages.

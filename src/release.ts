@@ -1,4 +1,4 @@
-// Faster isn't on the App Store yet. Set `released` to true once it's live: the badges then link
-// to the App Store, and the coming-soon notes, FAQ answer and structured data give way to the download.
-export const released = false;
+// Faster is on the App Store (1.0, approved 2026-11-13). With `released` true the badges link to
+// the App Store and the page says it's available now; false brings back the coming-soon notes.
+export const released = true;
 export const appStore = 'https://apps.apple.com/app/id6829356882';

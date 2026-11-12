@@ -73,7 +73,7 @@ p { margin: 0; }
 /* Apple's white badge on dark backgrounds: the same artwork, inverted. */
 @media (prefers-color-scheme: dark) { .badge-art { filter: invert(1); } }
 
-/* Until launch: a label in the badge's place, and a note above the headline */
+/* Until launch: a label in the badge's place. The note above the headline stays, saying coming soon or available now */
 .soon-badge { display: inline-flex; flex: none; align-items: center; gap: 10px; height: 53px; padding: 0 18px 0 16px; border-radius: 10px; background: #000; color: #fff; font-size: 16px; font-weight: 600; white-space: nowrap; }
 .soon-badge img { height: 24px; width: auto; }
 .soon-badge.small { height: 38px; padding: 0 12px 0 11px; gap: 7px; border-radius: 8px; font-size: 13px; }

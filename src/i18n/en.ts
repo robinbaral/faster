@@ -9,6 +9,8 @@ export default {
   store: 'Download Faster on the App Store',
   // Shown until the app is on the App Store (see src/release.ts).
   soon: { badge: 'Soon on the App Store', tag: 'Coming soon for iPhone', meta: 'Coming soon to the App Store.', q: 'When can I download Faster?', a: 'Faster is coming soon to the App Store for iPhone. As soon as it\'s available, you\'ll find the download link on this page.' },
+  // Shown above the headline once the app is live.
+  now: 'Available now for iPhone',
 
   hero: {
     // HTML, split where the three tiles go.

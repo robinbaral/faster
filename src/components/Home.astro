@@ -129,7 +129,7 @@ const watchSizes = 'min(245px, 36vw)';
 <main>
   <section class="hero">
     <div class="wrap">
-      {!released && <p class="soon-tag">{t.soon.tag}</p>}
+      <p class="soon-tag">{released ? t.now : t.soon.tag}</p>
       <h1>
         <Fragment set:html={t.hero.title[0]} /><span class="tile"><Shot src={icon} dark={iconDark} widths={[96, 192]} sizes={tileSizes} loading="eager" /></span><Fragment set:html={t.hero.title[1]} /><span class="tile"><Shot src={tileGauge} widths={[96, 192]} sizes={tileSizes} loading="eager" /></span><Fragment set:html={t.hero.title[2]} /><span class="tile inset"><Shot src={tileBar} widths={[96, 192]} sizes={tileSizes} loading="eager" /></span><Fragment set:html={t.hero.title[3]} />
       </h1>

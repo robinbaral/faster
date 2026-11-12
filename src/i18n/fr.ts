@@ -8,6 +8,7 @@ export default {
   nav: { features: 'Fonctionnalités', privacy: 'Confidentialité', faq: 'FAQ' },
   store: 'Télécharger Faster dans l’App Store',
   soon: { badge: 'Bientôt sur l’App Store', tag: 'Bientôt sur iPhone', meta: 'Bientôt sur l’App Store.', q: 'Quand pourrai-je télécharger Faster ?', a: 'Faster arrive bientôt sur l’App Store pour iPhone. Dès que l’app sera disponible, le lien de téléchargement apparaîtra sur cette page.' },
+  now: 'Disponible dès maintenant sur iPhone',
 
   hero: {
     title: ['Votre ', ' jeûne,<br>phase ', ' par<br>phase ', ''],

@@ -7,6 +7,7 @@ export default {
   nav: { features: '機能', privacy: 'プライバシー', faq: 'よくある質問' },
   store: 'App StoreでFasterをダウンロード',
   soon: { badge: 'App Storeで近日公開', tag: 'iPhone向けに近日公開', meta: 'App Storeで近日公開予定です。', q: 'Fasterはいつダウンロードできますか？', a: 'FasterはまもなくiPhone向けにApp Storeで公開されます。公開されしだい、このページにダウンロードリンクを掲載します。' },
+  now: 'iPhone向けに配信中',
 
   hero: {
     title: ['', 'ファスティングを<br>フェーズ', 'ごとに<br>見守ろう', ''],

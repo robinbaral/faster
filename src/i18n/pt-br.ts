@@ -7,6 +7,7 @@ export default {
   nav: { features: 'Recursos', privacy: 'Privacidade', faq: 'Perguntas' },
   store: 'Baixe o Faster na App Store',
   soon: { badge: 'Em breve na App Store', tag: 'Em breve para iPhone', meta: 'Em breve na App Store.', q: 'Quando posso baixar o Faster?', a: 'O Faster chega em breve à App Store para iPhone. Assim que estiver disponível, você encontrará o link para baixar nesta página.' },
+  now: 'Já disponível para iPhone',
 
   hero: {
     title: ['Seu ', ' jejum,<br>fase ', ' a<br>fase ', ''],

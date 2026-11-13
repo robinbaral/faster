@@ -6,7 +6,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "build:cloudflare": "SITE_URL=https://faster.robinbaral.workers.dev BASE_PATH=/ NOINDEX=1 astro build"
+    "build:cloudflare": "SITE_URL=https://fasterfasting.app BASE_PATH=/ astro build"
   },
   "dependencies": {
     "astro": "^7.4.4"
